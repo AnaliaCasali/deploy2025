@@ -80,8 +80,7 @@ public class itemInscripcionMesaExamenController {
         List<ItemInscripcionMesaExamen> items = itemInscripcionMesaExamenService.findByEstudianteAndTurno(dniEstudiante, idTurno);
         return new ResponseEntity<>(items, HttpStatus.OK);
     }
-    //GET http://localhost:8080/api/itemsinscripcionmesas/filtroAlumnoTurno?idEstudiante=12345&idTurno=2
-
+ 
     @PostMapping
     public ItemInscripcionMesaExamenDTO save(@RequestBody ItemInscripcionMesaExamenDTO itemInscripcionMesaExamenDTO) {
         return itemInscripcionMesaExamenService.save(itemInscripcionMesaExamenDTO);

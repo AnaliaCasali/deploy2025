@@ -27,8 +27,6 @@ public class WebConfig implements WebMvcConfigurer {
                     .allowedOrigins("https://ies63lastoscas.edu.ar") // Ajusta esto al origen del frontend
                     .allowedOrigins("http://149.50.145.229:4200") // Ajusta esto al origen del frontend
                     .allowedOrigins("http://149.50.145.229:8080") // Ajusta esto al origen del frontend
-                    .allowedOrigins("http://localhost:4200") // Ajusta esto al origen del frontend
-                    .allowedOrigins("http://localhost:8080") // Ajusta esto al origen del frontend
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH")
                     .allowedHeaders("*")
                     .allowCredentials(true);
