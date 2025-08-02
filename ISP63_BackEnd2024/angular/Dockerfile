@@ -1,23 +1,27 @@
-# Usar la imagen base de OpenJDK
-FROM openjdk:17-jdk-slim
+# Etapa de build
+FROM node:18-alpine AS build
+WORKDIR /app
 
-# Definir el archivo JAR a copiar
-ARG JAR_FILE=target/ISP63-0.0.1.jar
+# Copiar dependencias
+COPY package*.json ./
+ENV NODE_OPTIONS="--max_old_space_size=4096"
+RUN npm install -g @angular/cli@18.0.0 && npm ci
 
-# Copiar el archivo JAR de la aplicación al contenedor
-COPY ${JAR_FILE} appIES63.jar
+# Copiar el código Angular
+COPY . .
 
-# Crear el directorio de uploads dentro del contenedor
-RUN mkdir /uploads
+# Build Angular
+RUN npm run build --prod
 
-# Copiar el contenido de la carpeta upload local al directorio /upload del contenedor
-COPY uploads /uploads
+# Etapa de copia al volumen compartido
+FROM alpine:3.18
+RUN apk add --no-cache bash
 
-# Establecer permisos de lectura y escritura para el directorio
-RUN chmod -R 755 /uploads
+# Crear directorio de destino si no existe
+RUN mkdir -p /dist
 
-# Exponer el puerto en el que corre la aplicación
-EXPOSE 8080
+# Copiar build Angular al volumen montado en /dist
+COPY --from=build /app/dist/isp63-front-end2024 /dist
 
-# Ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "/appIES63.jar"]
+# Mantener contenedor vivo para debug
+CMD ["tail", "-f", "/dev/null"]
