@@ -1,0 +1,234 @@
+ [
+  {
+    "question": "Hola",
+    "answer": "Hola, Soy el chatbot IES Nº 63 Natalia Quessús .. en que te ayudo?."
+  },
+  {
+      "question": "¿Cuál es el nombre de la institución?",
+      "answer": "Soy el chatbot IES Nº 63 Natalia Quessús y fui creado para ayudarte."
+    },
+    {
+      "question": "¿Cómo puedo contactarte?",
+      "answer": "Puedes contactarnos a través de este chat, Telefónicamente al 3482492041, y redes sociales"
+    },
+    {
+      "question": "¿Quién desarrolló la web IES63?",
+      "answer": "El desarrollo de la web IES63 fue realizado por estudiantes de la Tecnicatura en Desarrollo de Software del Instituto Superior de Profesorado Nº 63. Los desarrolladores frontend y backend fueron: Belén Morel, Damian Koziol, Nazarena Winkler y Gabriel Rivero. Project Manager fue  Ing. Analia Casali."
+    },
+    {
+      "question": "¿Quines son los desarrolladores de la web IES63?",
+      "answer": "El desarrollo de la web IES63 fue realizado por estudiantes de la Tecnicatura en Desarrollo de Software del Instituto Superior de Profesorado Nº 63. Los desarrolladores frontend y backend fueron: Belén Morel, Damian Koziol, Nazarena Winkler y Gabriel Rivero. Project Manager fue  Ing. Analia Casali."
+    },
+    {
+      "question": "¿Qué tecnologías y herramientas utilizaron para desarrollar la web IES63?",
+      "answer": "Las tecnologías utilizadas en el desarrollo de la web IES63 fueron: Backend: Java, Spring Boot, Spring Security, Hibernate, REST API, JWT, JSON, Maven, Apache y Swagger. Base de datos: MySQL. Frontend: HTML, CSS, Typescript, Angular y Tailwind. Además, se usaron herramientas como Git, GitHub, VSCode, IntelliJ IDEA, ESLint, Postman, Trello, Discord, Figma y Workbench."
+    },    {
+      "question": "¿Cuándo es la inscripción para el ingreso 2025?",
+      "answer": "La inscripción para el ciclo lectivo 2025 es del 18 de noviembre de 2024 al 13 de diciembre de 2024."
+    },
+    {
+      "question": "¿Qué documentos necesito para inscribirme?",
+      "answer": "Necesitas completar la ficha de inscripción, fotocopia de tu DNI, dos fotos 4x4, partida de nacimiento, fotocopia de tu título secundario o constancia en trámite, certificado de salud y fonoaudiológico, y constancia de domicilio."
+    },
+    {
+      "question": "¿Dónde presento los documentos de inscripción?",
+      "answer": "Por favor, presenta toda la documentación en un folio tamaño A4."
+    },
+    {
+      "question": "¿Qué fotos necesito para la inscripción?",
+      "answer": "Debes presentar dos fotografías de tamaño 4x4."
+    },
+    {
+      "question": "¿Qué es la constancia de vecindad?",
+      "answer": "Es un documento que certifica tu domicilio actual."
+    },
+    {
+      "question": "¿Puedo inscribirme si no tengo mi título secundario?",
+      "answer": "Sí, puedes presentar una constancia de que tu título secundario está en trámite."
+    },
+    {
+      "question": "¿Dónde consigo la ficha de inscripción?",
+      "answer": "La ficha de inscripción debe completarse con tus datos personales. Puedes consultar en el instituto para obtenerla."
+    },
+    {
+      "question": "¿Qué carreras ofrecen?",
+      "answer": "Hay actualmente 5 carreras.Ofrecemos la Tecnicatura Superior en Desarrollo de Software y el Técnico Superior en Mantenimiento Industrial y Docentes: ofrecemos el Profesorado de Educación Primaria, el Profesorado de Educación Secundaria en Lengua y Literatura, y el Profesorado de Educación Secundaria en Biología "
+    },
+    {
+      "question": "¿Qué carreras técnicas ofrecen?",
+      "answer": "Ofrecemos la Tecnicatura Superior en Desarrollo de Software y el Técnico Superior en Mantenimiento Industrial."
+    },
+    {
+      "question": "¿Cuánto dura la carrera de Desarrollo de Software?",
+      "answer": "La Tecnicatura Superior en Desarrollo de Software tiene una duración de 3 años."
+    },
+    {
+      "question": "¿Dónde se cursa la Tecnicatura en Desarrollo de Software?",
+      "answer": "Se cursa en la sede de Las Toscas."
+    },
+
+    {
+      "question": "¿Qué carreras docentes ofrecen?",
+      "answer": "Ofrecemos el Profesorado de Educación Primaria, el Profesorado de Educación Secundaria en Lengua y Literatura, y el Profesorado de Educación Secundaria en Biología."
+    },
+    {
+      "question": "¿Cuánto dura el Profesorado de Educación Primaria?",
+      "answer": "El Profesorado de Educación Primaria tiene una duración de 4 años."
+    },
+    {
+      "question": "¿Dónde se cursa el Profesorado de Educación Secundaria en Biología?",
+      "answer": "Se cursa en la sede de Florencia."
+    },
+    {
+      "question": "¿Cuánto dura la carrera de Mantenimiento Industrial?",
+      "answer": "La carrera de Técnico Superior en Mantenimiento Industrial tiene una duración de 3 años."
+    },
+    {
+      "question": "¿En qué sede se cursa Mantenimiento Industrial?",
+      "answer": "La carrera se cursa en la sede de Avellaneda."
+    },
+    {
+      "question": "¿Cuál es el plan de estudios de la Tecnicatura en Desarrollo de Software?",
+      "answer": "El plan de estudios de la Tecnicatura en Desarrollo de Software es 2120/16."
+    },
+    {
+      "question": "¿Qué plan de estudios tiene el Profesorado de Lengua y Literatura?",
+      "answer": "El plan de estudios del Profesorado de Lengua y Literatura es 514/18."
+    },
+
+      {
+        "question": "¿Qué materias se cursan en el primer año del plan de Lengua y Literatura en la carrera de Profesorado de Educación Secundaria en Lengua y Literatura?",
+        "answer": "En el primer año, se cursan Lengua española, Lingüística general, Itinerario por la literatura argentina I, Literaturas antiguas, Lecturas críticas, y Producción oral y escrita. Además, materias como Pedagogía y un seminario sobre movimientos artísticos."
+      },
+      {
+        "question": "¿Cuántas horas semanales se cursan en el primer año de la carrera de Profesorado de Educación Secundaria en Lengua y Literatura?",
+        "answer": "En el primer año se cursan 35 horas cátedra semanales."
+      },
+      {
+        "question": "¿Cuántas horas de práctica docente hay en el plan de Lengua y Literatura en la carrera de Profesorado de Educación Secundaria en Lengua y Literatura?",
+        "answer": "En total, se incluyen 18 horas semanales de práctica docente distribuidas en diferentes talleres a lo largo del programa."
+      },
+      {
+        "question": "¿Qué materias se cursan en el segundo año del plan de Lengua y Literatura en la carrera de Profesorado de Educación Secundaria en Lengua y Literatura?",
+        "answer": "En el segundo año, se cursan materias como Instituciones educativas, Didáctica y currículum, Psicología y educación, Latín, Lengua española II, Lingüística del texto, Didáctica de la lengua y literatura, Itinerario por la literatura latinoamericana I, y Literaturas modernas."
+      },
+      {
+        "question": "¿Cuántas horas cátedra se cursan en el segundo año de la carrera de Profesorado de Educación Secundaria en Lengua y Literatura?",
+        "answer": "En el segundo año se cursan 35 horas cátedra semanales."
+      },
+      {
+        "question": "¿Qué materias se cursan en el tercer año del plan de Lengua y Literatura en la carrera de Profesorado de Educación Secundaria en Lengua y Literatura?",
+        "answer": "En el tercer año se cursan Filosofía, Historia y política de la educación argentina, Sujetos de la educación secundaria, Lingüística del texto, Itinerario por la literatura argentina II, Literaturas medievales y renacentistas, y Práctica docente."
+      },
+      {
+        "question": "¿Cuántas horas cátedra se cursan en el tercer año de la carrera de Profesorado de Educación Secundaria en Lengua y Literatura?",
+        "answer": "En el tercer año se cursan 36 horas cátedra semanales."
+      },
+      {
+        "question": "¿Qué materias se cursan en el cuarto año del plan de Lengua y Literatura en la carrera de Profesorado de Educación Secundaria en Lengua y Literatura?",
+        "answer": "En el cuarto año se cursan Ética y trabajo docente, Educación sexual integral (ESI), Metodología y prácticas de investigación, Lingüística del texto, Didáctica de la lengua y literatura, y Práctica docente."
+      },
+      {
+        "question": "¿Cuántas horas cátedra se cursan en el cuarto año de la carrera de Profesorado de Educación Secundaria en Lengua y Literatura?",
+        "answer": "En el cuarto año se cursan 36 horas cátedra semanales."
+      },
+        {
+          "question": "¿Qué perfil profesional se busca formar con la Tecnicatura Superior en Mantenimiento Industrial?",
+          "answer": "El perfil busca formar técnicos capaces de adaptarse a los avances tecnológicos, con habilidades para resolver problemas, trabajar en equipo, y con una actitud ética y responsable."
+        },
+        {
+          "question": "¿Qué materias se cursan en el primer año de la Tecnicatura Superior en Mantenimiento Industrial?",
+          "answer": "En el primer año se cursan Comunicación, Matemática, Física, Química, Dibujo Técnico, Mantenimiento de Máquinas y Equipos, y Electromecánica."
+        },
+        {
+          "question": "¿Cuántas horas de práctica docente incluye la Tecnicatura Superior en Mantenimiento Industrial?",
+          "answer": "La carrera incluye un total de 300 horas de práctica docente distribuidas a lo largo de los diferentes años de la formación."
+        },
+        {
+          "question": "¿Qué temas se abordan en el segundo año de la Tecnicatura Superior en Mantenimiento Industrial?",
+          "answer": "En el segundo año se abordan temas como Problemáticas Socio Contemporáneas, Mantenimiento Predictivo y Correctivo, Mantenimiento Eléctrico y Electrónico, y Mantenimiento Hidráulico y Neumático."
+        },
+        {
+          "question": "¿Qué temas se abordan en el tercer y cuarto año de la Tecnicatura Superior en Mantenimiento Industrial?",
+          "answer": "En los últimos años se profundiza en Mantenimiento Avanzado, Gestión de Proyectos, Calidad y Mejora Continua, y se realizan Prácticas Profesionales."
+        },
+        {
+          "question": "¿Cuántas horas cátedra semanales se cursan en el primer año de la Tecnicatura Superior en Mantenimiento Industrial?",
+          "answer": "En el primer año se cursan entre 3 y 4 horas semanales por materia, sumando un total de 96 horas anuales."
+        },
+        {
+          "question": "¿Cuántas horas cátedra semanales se cursan en el segundo año de la Tecnicatura Superior en Mantenimiento Industrial?",
+          "answer": "En el segundo año se cursan entre 3 y 6 horas semanales, sumando un total de 192 horas anuales."
+        },
+        {
+          "question": "¿Cuántas horas cátedra semanales se cursan en el tercer año de la Tecnicatura Superior en Mantenimiento Industrial?",
+          "answer": "En el tercer año se cursan 3 horas semanales, sumando un total de 48 horas anuales."
+        },
+
+          {
+            "question": "¿Qué perfil profesional se forma en la Tecnicatura Superior en Desarrollo de Software?",
+            "answer": "Se forma un técnico superior en desarrollo de software con competencias en análisis, diseño, implementación y mantenimiento de sistemas informáticos, habilidades para resolver problemas, trabajo en equipo, y una base sólida en ética y responsabilidad social."
+          },
+          {
+            "question": "¿Cuáles son las materias del primer año de la Tecnicatura Superior en Desarrollo de Software?",
+            "answer": "En el primer año se cursan materias como Matemática, Comunicación y fundamentos del desarrollo de software."
+          },
+          {
+            "question": "¿Cuántas horas de práctica tiene la Tecnicatura Superior en Desarrollo de Software?",
+            "answer": "No se especifica un número exacto de horas de práctica, pero hay un enfoque en la práctica formativa en varias materias, como Innovación y Desarrollo Emprendedor."
+          },
+          {
+            "question": "¿Qué temas se estudian en el segundo año de la Tecnicatura Superior en Desarrollo de Software?",
+            "answer": "En el segundo año se estudian temas como Problemáticas Socio Contemporáneas, Inglés Técnico II, y se enfatiza la innovación y el emprendimiento."
+          },
+          {
+            "question": "¿Qué se estudia en el tercer año de la Tecnicatura Superior en Desarrollo de Software?",
+            "answer": "En el tercer año se incluye la materia de Ética y Responsabilidad Social, que fomenta el pensamiento crítico sobre el comportamiento humano en las organizaciones."
+          },
+          {
+            "question": "¿Cuántas horas de clase semanales tengo en la Tecnicatura Superior en Desarrollo de Software?",
+            "answer": "En el primer año, hay 4 horas semanales en Matemática y 3 horas en Comunicación. En el segundo y tercer año, hay 3 horas semanales en materias como Inglés Técnico II y Ética y Responsabilidad Social."
+          },
+          {
+            "question": "¿Cuál es el campo laboral de la Tecnicatura Superior en Desarrollo de Software?",
+            "answer": "Los egresados pueden trabajar en empresas de desarrollo de software, consultorías tecnológicas, departamentos de IT, y gestionar proyectos tecnológicos o emprendimientos propios."
+          }
+          ,
+            {
+              "question": "¿Cuántas horas de clase tengo por semana en el Profesorado de Educación Primaria?",
+              "answer": "En el Profesorado de Educación Primaria, las horas semanales son: 28 horas en primer año, 32 horas en segundo año, 32 horas en tercer año y 38 horas en cuarto año."
+            },
+            {
+              "question": "¿Dónde puedo trabajar después de terminar el Profesorado de Educación Primaria?",
+              "answer": "Podrás trabajar en instituciones educativas de nivel primario como docente, en programas de educación no formal, en el diseño curricular, y en la formación de otros docentes."
+            },
+            {
+              "question": "¿Qué materias tengo en primer año del Profesorado de Educación Primaria?",
+              "answer": "En primer año, tendrás materias como Psicología y Educación, Pedagogía, y otras materias de formación general y práctica profesional."
+            },
+            {
+              "question": "¿Qué materias tengo en segundo año del Profesorado de Educación Primaria?",
+              "answer": "En segundo año, cursarás materias específicas sobre la práctica docente y otras relacionadas con la formación general y específica."
+            },
+            {
+              "question": "¿Qué materias tengo en tercer año del Profesorado de Educación Primaria?",
+              "answer": "En tercer año, cursarás materias como Tecnologías de la Información y la Comunicación, Matemática y su Didáctica II, Ciencias Naturales y su Didáctica II, entre otras."
+            },
+            {
+              "question": "¿Qué materias tengo en cuarto año del Profesorado de Educación Primaria?",
+              "answer": "En cuarto año, tendrás materias como Ética, Trabajo docente, Derechos Humanos y Ciudadanía, además de talleres de práctica y formación en diversas áreas."
+            },
+            {
+              "question": "¿Cuántas horas de práctica tengo en el Profesorado de Educación Primaria?",
+              "answer": "A lo largo de la carrera, tendrás un total de 928 horas de práctica profesional distribuidas en los distintos años."
+            },
+            {
+              "question": "¿Qué perfil profesional voy a tener al terminar el Profesorado de Educación Primaria?",
+              "answer": "Al terminar el Profesorado de Educación Primaria, serás un docente con sólida formación teórica y práctica, preparado para enseñar a la diversidad de estudiantes en el aula y promover un aprendizaje significativo."
+            }
+
+
+
+
+  ]
+

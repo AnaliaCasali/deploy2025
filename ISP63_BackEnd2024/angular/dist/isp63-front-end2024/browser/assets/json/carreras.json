@@ -1,0 +1,47 @@
+[
+    {
+        "nro_plan": 23,
+        "id": 1,
+        "campo_ocupacional": "Tecnico",
+        "horario": "18 a 23",
+        "nombre": "Tecnicatura Superior en Desarrollo de Software",
+        "sede": "Las Toscas",
+        "imagen_id": 1
+    },
+    {
+        "nro_plan": 22222,
+        "id": 2,
+        "campo_ocupacional": "Docente",
+        "horario": "18 a 23",
+        "nombre": "Profesorado de Educación Primaria",
+        "sede": "Las Toscas",
+        "imagen_id": 2
+    },
+    {
+        "nro_plan": 0,
+        "id": 3,
+        "campo_ocupacional": "Docente",
+        "horario": "18 a 23",
+        "nombre": "Profesorado de Educación Secundaria en Lengua y Literaturaa",
+        "sede": "Las Toscas",
+        "imagen_id": 3
+    },
+    {
+        "nro_plan": 1234,
+        "id": 4,
+        "campo_ocupacional": "Docente",
+        "horario": "18 a 23",
+        "nombre": "Técnico Superior en Mantenimiento Industrial",
+        "sede": "Avellaneda",
+        "imagen_id": 4
+    },
+    {
+        "nro_plan": 1234,
+        "id": 5,
+        "campo_ocupacional": "Docente",
+        "horario": "18 a 23",
+        "nombre": "Profesorado de Educación Secundaria en Biología",
+        "sede": "Florencia",
+        "imagen_id": 5
+    }
+]
