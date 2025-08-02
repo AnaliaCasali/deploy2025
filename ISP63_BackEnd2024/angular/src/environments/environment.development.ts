@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   apiUrl: 'https://ies63lastoscas.edu.ar/',
   userId:''
 
