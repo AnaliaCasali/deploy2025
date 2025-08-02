@@ -1,5 +1,5 @@
-import { environment } from './../../../../../environments/environment';
-import { ToPdfService } from './../../../../shared/services/to-pdf.service';
+import { environment } from '../../../../../environments/environment';
+import { ToPdfService } from '../../../../shared/services/to-pdf.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { InfoCarrerasService } from '../../../../services/info-carreras.service';
 import { Carrera } from '../../../../modelo/carreras/carrera';
@@ -19,7 +19,7 @@ export class CarreraListadoComponent implements OnInit, OnDestroy {
   carreras!: Carrera[];
   fileUrl: string | undefined;
   imageUrls: string[] = [];
-  authUrl: string=  environment.apiUrl  + 'auth/imagenes';
+  private authUrl: string=  environment.apiUrl  + 'auth/imagenes';
   constructor(
     private carreraService: InfoCarrerasService,
     private imagenService: ImagenService,
