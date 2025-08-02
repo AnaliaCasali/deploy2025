@@ -1,1 +1,0 @@
-import{a}from"./chunk-KC5BXA64.js";import"./chunk-WZ63J2F5.js";import"./chunk-SJWRDQVH.js";import"./chunk-EITPQ4QS.js";import"./chunk-5KY6YBJG.js";import"./chunk-4DCJT2OD.js";import"./chunk-X5N6KVFF.js";import"./chunk-EQDQRRRY.js";export{a as SingUpComponent};

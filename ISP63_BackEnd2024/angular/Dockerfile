@@ -11,7 +11,8 @@ RUN npm install -g @angular/cli@18.0.0 && npm ci
 COPY . .
 
 # Build Angular
-RUN npm run build --prod
+#RUN npm run build --prod
+RUN ng build --configuration=production
 
 # Etapa de copia al volumen compartido
 FROM alpine:3.18
