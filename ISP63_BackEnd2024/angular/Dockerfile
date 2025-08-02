@@ -12,7 +12,7 @@ COPY . .
 
 # Build Angular
 #RUN npm run build --prod
-RUN ng build --configuration=production
+RUN npm run build --configuration=production
 
 # Etapa de copia al volumen compartido
 FROM alpine:3.18

@@ -23,16 +23,24 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "/"
               },
-                "src/favicon.ico",
-              "src/assets"
+              {
+                "input": "src",
+                "glob": "favicon.ico",
+                "output": "/"
+              },
+              {
+                "input": "src/assets",
+                "glob": "**/*",
+                "output": "assets"
+              }
             ],
             "styles": [
               "node_modules/@toast-ui/calendar/dist/toastui-calendar.css",
-                 "node_modules/angular-calendar/css/angular-calendar.css",
-                "src/styles.css"
-
+              "node_modules/angular-calendar/css/angular-calendar.css",
+              "src/styles.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -44,12 +52,13 @@
           "configurations": {
             "production": {
               "fileReplacements": [
-              {
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }
-            ],
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
+              "outputHashing": "all",
               "budgets": [
                 {
                   "type": "initial",
@@ -61,8 +70,7 @@
                   "maximumWarning": "2kB",
                   "maximumError": "5kB"
                 }
-              ],
-              "outputHashing": "all"
+              ]
             },
             "development": {
               "optimization": false,
@@ -102,11 +110,17 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
-
-,
+              {
+                "input": "src",
+                "glob": "favicon.ico",
+                "output": "/"
+              },
+              {
+                "input": "src/assets",
+                "glob": "**/*",
+                "output": "assets"
+              }
+            ],
             "styles": [
               "src/styles.css"
             ],
