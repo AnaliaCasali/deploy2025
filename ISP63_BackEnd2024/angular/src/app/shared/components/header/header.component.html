@@ -1,0 +1,73 @@
+<div class="bg-white">
+<!---   TITULO   COLOR TEXTO  #4D44B5 --->
+<nav class="block w-full max-w-full bg-transparent text-white shadow-none rounded-xl transition-all px-0 py-0">
+  <div class="flex flex-col-reverse justify-between gap-6 md:flex-row md:items-center">
+    <div class="pr-15 w-auto">
+      <h6    value="  "> </h6>
+    </div>
+    <div class="capitalize ">
+      <h1   class="block     antialiased tracking-normal font-sans text-2xl font-bold
+      leading-relaxed  text-blue-800">{{panelName}}</h1>
+    </div>
+   <div class="flex items-center">
+
+
+<div class="mr-auto md:mr-8 ">
+<!--CUADRO BUSQUEDA
+  <div class="relative w-full min-w-[100px] h-10 md:w-48 ">
+      <input
+          class="peer w-full h-full bg-transparent text-gray-700 font-sans font-normal outline-none transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 border-2 border-blue-gray-200 focus:border-blue-500 rounded-full pl-10 pr-3 py-2.5"
+          placeholder=" "
+          type="text">
+      <label
+          class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px]">
+          <span></span>      </label>
+      <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M10.5 2a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zm0 1.5A7 7 0 1 1 3.5 10a7 7 0 0 1 7-7zm5.5 12a1 1 0 0 0 0 2h3a1 1 0 0 0 0-2h-3z"/>
+      </svg>
+  </div>-->
+</div>
+    <!-- Botón de Notificaciones -->
+    <button  aria-expanded="false" aria-haspopup="menu" id=":r2:"
+    class="relative middle none font-sans font-medium text-center uppercase
+      transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none
+      w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs
+      text-blue-900 hover:bg-blue-gray-500/10
+      active:bg-blue-gray-500/30 mt-4" type="button">
+
+      <span  class="absolute top-1/4 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"
+        class="h-10 w-6 text-blue-900 mt-0">
+            <path fill-rule="evenodd" d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z" clip-rule="evenodd" stroke="currentColor" stroke-width="1.5" />
+        </svg>
+    </span>
+
+    <div    *ngIf="notificacionesNoLeidas > 0" class="bg-red-500 text-white rounded-full absolute -top-3 right-0 w-5 h-5
+              flex items-center justify-center text-xs font-bold">
+        <span id="notificaciones" class=" text-white">{{notificacionesNoLeidas}}</span>
+    </div>
+
+  </button>
+       <!-- DATOS DE USUARIO -->
+      <button class="
+          cursor-pointer duration-300 hover:text-blue-500
+          middle none font-sans font-bold center uppercase
+           transition-all disabled:opacity-50 disabled:shadow-none
+           disabled:pointer-events-none text-xs py-3 rounded-lg
+           text-blue-900 hover:bg-blue-gray-500/10
+           active:bg-blue-gray-500/30 hidden items-start gap-1 px-4 xl:flex flex-col">
+          <span class="text-left">{{ nombre }}</span>
+          <span class="text-left">{{ rol }}</span>
+      </button>
+     <!-- FOTO PERFIL-->
+     <button class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30" type="button">
+      <span class="w-10 h-10 rounded-full flex items-center justify-center bg-blue-500 text-white text-2xl ">
+        {{ letra }}
+      </span>
+    </button>
+
+      </div>
+  </div>
+    </nav>
+
+<div>

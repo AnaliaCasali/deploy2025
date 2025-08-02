@@ -1,0 +1,55 @@
+ies63lastoscas.edu.ar {
+
+    @swagger {
+        path /swagger-ui/*
+    }
+    handle @swagger {
+        reverse_proxy ies63_backend:8080
+    }
+
+    @docs {
+        path /v3/api-docs/*
+    }
+    handle @docs {
+        reverse_proxy ies63_backend:8080
+    }
+
+    @auth {
+        path /auth/*
+    }
+    handle @auth {
+        reverse_proxy ies63_backend:8080
+    }
+
+    handle_path /api/* {
+        reverse_proxy ies63_backend:8080
+    }
+
+    handle_path /phpmyadmin/* {
+        uri strip_prefix /phpmyadmin
+        reverse_proxy phpmyadmin:80
+    }
+    handle {
+        root * /usr/share/nginx/html/browser
+        try_files {path} /index.html
+        file_server
+    }
+
+    tls {
+        protocols tls1.2 tls1.3
+    }
+
+    encode gzip
+
+    header {
+        X-Frame-Options "DENY"
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+
+    @http {
+        protocol http
+    }
+
+    redir @http https://{host}{uri} permanent
+}

@@ -1,0 +1,87 @@
+<section class="news-section py-5 bg-gray-100">
+  <!-- Noticia Principal -->
+  <div class="container mx-auto p-4">
+    <h2 class="text-3xl text-center font-bold text-blue-900 uppercase tracking-wide relative mb-10">
+      Últimas Noticias
+      <span class="block bg-orange-500 h-1 w-20 mx-auto mt-2"></span>
+      <span class="block bg-blue-900 h-1 w-10 mx-auto mt-2"></span>
+    </h2>
+
+
+    <div *ngIf="noticiaPrincipal" class="flex flex-col sm:flex-row justify-between bg-white shadow-lg rounded-lg mb-10 p-4"
+      id="noticias-section"
+      [ngClass]="{'bg-red-100 text-red-700 border border-red-500 opacity-60': !noticiaPrincipal.vigente, 'bg-white text-gray-800': noticiaPrincipal.vigente}">
+     
+      <div class="main-news-image sm:w-96 w-full h-60 flex items-center justify-center overflow-hidden rounded-lg bg-gray-200 mb-4 sm:mb-0">
+        <img [src]="noticiaPrincipal.imagen.url" [alt]="noticiaPrincipal.imagen.alt" class="w-full h-full object-contain">
+      </div>
+
+
+      <div class="main-news-content flex-1 sm:pl-6">
+        <h3 class="text-2xl text-gray-800 mb-4">{{ noticiaPrincipal.titulo }}</h3>
+        <p class="text-gray-600 mb-4">{{ truncateText(noticiaPrincipal.descripcion || '', 150) }}</p>
+
+
+        <div class="flex flex-wrap items-center justify-center sm:justify-start space-x-2 space-y-2 sm:space-y-0"> <!-- Botones adaptables -->
+          <a [routerLink]="['/noticiadetalle', noticiaPrincipal.id]"
+             class="btn-read-more bg-orange-500 text-white py-2 px-4 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300 mb-2 sm:mb-0">
+            Leer más
+          </a>
+          <button *ngIf="rol === 'ADMIN'" [routerLink]="['/editar-noticia', noticiaPrincipal.id]"
+                  class="bg-blue-500 text-white py-2 px-4 rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300 mb-2 sm:mb-0">
+            <i class="fas fa-pencil-alt"></i> Editar
+          </button>
+          <button *ngIf="rol === 'ADMIN'" (click)="borrarNoticia(noticiaPrincipal.id)"
+                  class="bg-red-500 text-white py-2 px-4 rounded-full font-semibold hover:bg-red-700 transition-colors duration-300 mb-2 sm:mb-0">
+            <i class="fas fa-trash-alt"></i> Borrar
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Paginación de Noticias -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div *ngFor="let noti of noticiasPaginadas"
+           [ngClass]="{'bg-red-100 text-red-700 border border-red-500 opacity-60': !noti.vigente, 'bg-white text-gray-800': noti.vigente}"
+           class="shadow-lg rounded-lg p-6 flex flex-col justify-between h-full transition-opacity duration-300">
+
+
+        <div class="flex-1">
+          <div class="w-full h-40 flex items-center justify-center overflow-hidden rounded-lg bg-gray-200">
+            <img [src]="noti.imagen.url" [alt]="noti.imagen.alt" class="w-full h-full object-contain">
+          </div>
+          <h4 class="text-xl mb-2 mt-4">{{ noti.titulo }}</h4>
+          <p class="mb-4">{{ truncateText(noti.descripcion, 80) }}</p>
+        </div>
+
+
+        <div class="flex flex-wrap items-center justify-center space-x-2 space-y-2 sm:space-y-0"> <!-- Botones adaptables -->
+          <a [routerLink]="['/noticiadetalle', noti.id]"
+             class="btn-read-more bg-orange-500 text-white py-2 px-4 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300">
+            Leer más
+          </a>
+          <button *ngIf="rol === 'ADMIN'" [routerLink]="['/editar-noticia', noti?.id]"
+                  class="bg-blue-500 text-white py-2 px-4 rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+          <button *ngIf="rol === 'ADMIN'" (click)="borrarNoticia(noti.id)" class="bg-red-500 text-white py-2 px-4 rounded-full font-semibold hover:bg-red-700 transition-colors duration-300">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Navegación de Páginas -->
+    <div class="flex justify-center mt-6">
+      <button
+        *ngFor="let page of [].constructor(totalPages); let i = index"
+        class="mx-1 px-3 py-1 rounded-full font-semibold"
+        [ngClass]="{'bg-blue-900 text-white': currentPage === (i + 1), 'bg-gray-300': currentPage !== (i + 1)}"
+        (click)="setPage(i + 1)">
+        {{ i + 1 }}
+      </button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+<header class="absolute w-full z-10 bg-transparent">
+  <div class="hidden lg:block">
+    <div class="flex flex-row justify-between items-start px-4">
+      <div class="flex-shrink-0">
+        <a class="navbar-brand" routerLink="/inicio">
+          <img class="w-20 h-24 transition-transform duration-300 hover:scale-105" src="../../../assets/imagenes/c5ae74ab1b4fa9285966da79b3f03dfb.png" alt="Small Header Logo">
+        </a>
+      </div>
+
+      <div class="flex-grow flex flex-wrap justify-center">
+        <ul class="flex flex-row mx-auto mb-2">
+          <li class="m-3 mx-4">
+            <a class="nav-link text-black font-semibold text-lg transition-colors duration-300 hover:text-[#ff5733]" routerLink="/inicio" routerLinkActive="navItemActive" aria-current="page">Inicio</a>
+          </li>
+          <li class="m-3 mx-4">
+            <a class="nav-link text-black font-semibold text-lg transition-colors duration-300 hover:text-[#ff5733]" routerLink="/carreras" routerLinkActive="navItemActive">Carreras</a>
+          </li>
+          <li class="m-3 mx-4">
+            <a class="nav-link text-black font-semibold text-lg transition-colors duration-300 hover:text-[#ff5733]" routerLink="/noticias" routerLinkActive="navItemActive">Noticias</a>
+          </li>
+          <li class="m-3 mx-4">
+            <a class="nav-link text-black font-semibold text-lg transition-colors duration-300 hover:text-[#ff5733]" routerLink="/institucional" routerLinkActive="navItemActive">Institucional</a>
+          </li>
+          <li class="m-3 mx-4">
+            <a class="nav-link text-black font-semibold text-lg transition-colors duration-300 hover:text-[#ff5733]" routerLink="/contacto" routerLinkActive="navItemActive">Contacto</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex-shrink-0">
+        <div class="flex justify-center mt-3">
+          <button id="loginButton" routerLink="/login" class="btn bg-white text-[#003366] font-semibold rounded-md px-4 py-2 mx-2 transition-colors duration-300 hover:bg-[#ff5733] hover:text-white transform hover:scale-110" (click)="actDesc(true)">
+            Login
+          </button>
+          <button id="signupButton" routerLink="/signup" class="btn bg-white text-[#003366] font-semibold rounded-md px-4 py-2 mx-2 transition-colors duration-300 hover:bg-[#ff5733] hover:text-white transform hover:scale-110" (click)="actDesc(false)">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block lg:hidden">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/inicio">
+          <img class="w-20 h-24 transition-transform duration-300 hover:scale-105" src="assets/imagenes/c5ae74ab1b4fa9285966da79b3f03dfb.png" alt="Small Header Logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav flex flex-col items-end">
+            <li class="nav-item m-3 mx-4">
+              <a class="nav-link text-black font-semibold transition-colors duration-300 hover:text-[#ff5733]" routerLink="/inicio" routerLinkActive="navItemActive" aria-current="page">Inicio</a>
+            </li>
+            <li class="nav-item m-3 mx-4">
+              <a class="nav-link text-black font-semibold transition-colors duration-300 hover:text-[#ff5733]" routerLink="/carreras" routerLinkActive="navItemActive">Carreras</a>
+            </li>
+            <li class="nav-item m-3 mx-4">
+              <a class="nav-link text-black font-semibold transition-colors duration-300 hover:text-[#ff5733]" routerLink="/noticias" routerLinkActive="navItemActive">Noticias</a>
+            </li>
+            <li class="nav-item m-3 mx-4">
+              <a class="nav-link text-black font-semibold transition-colors duration-300 hover:text-[#ff5733]" routerLink="/institucional" routerLinkActive="navItemActive">Institucional</a>
+            </li>
+            <li class="nav-item m-3 mx-4">
+              <a class="nav-link text-black font-semibold transition-colors duration-300 hover:text-[#ff5733]" routerLink="/contacto" routerLinkActive="navItemActive">Contacto</a>
+            </li>
+          </ul>
+
+          <div class="flex justify-center mt-3">
+            <button id="loginButton" routerLink="/login" class="btn bg-white text-[#003366] font-semibold rounded-md px-4 py-2 mx-2 transition-colors duration-300 hover:bg-[#ff5733] hover:text-white transform hover:scale-110" (click)="actDesc(true)">
+              Login
+            </button>
+            <button id="signupButton" routerLink="/signup" class="btn bg-white text-[#003366] font-semibold rounded-md px-4 py-2 mx-2 transition-colors duration-300 hover:bg-[#ff5733] hover:text-white transform hover:scale-110" (click)="actDesc(false)">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

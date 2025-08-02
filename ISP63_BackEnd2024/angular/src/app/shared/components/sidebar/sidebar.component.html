@@ -1,0 +1,105 @@
+<div class="contAside">
+    <button class="mobile-button"
+            (click)="toggleMenu()"
+            [ngClass]="{ 'menu-open': menuVisible }">
+      <i class="fas fa-bars"></i>
+    </button>
+
+
+    <aside class="sidebar justify-content-center" [ngClass]="{ 'menu-visible': menuVisible }">
+      <div class="logo-container">
+        <a     routerLink="/">
+          <img src="assets/imagenes/c5ae74ab1b4fa9285966da79b3f03dfb.png" alt="Logo" class="logo" />
+          </a>
+        </div>
+
+
+      <nav class="menu" >
+        <ul>
+
+          <li>
+            <a
+              routerLink="/general"
+              [ngClass]="{ active: activeLink === '/general' }"
+              (click)="setActiveLink('/general')"
+              ><i class="fas fa-home"></i><span>General</span></a
+            >
+          </li>
+
+          <li>
+            <a
+              routerLink="/students"
+              [ngClass]="{ active: activeLink === '/students' }"
+              (click)="setActiveLink('/students')"
+              ><i class="fas fa-user-graduate"></i><span>Alumnos</span></a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/profesores"
+              [ngClass]="{ active: activeLink === '/profesores' }"
+              (click)="setActiveLink('/profesores')"
+              ><i class="fas fa-chalkboard-teacher"></i><span>Profesores</span></a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/evento"
+              [ngClass]="{ active: activeLink === '/evento' }"
+              (click)="setActiveLink('/evento')"
+              ><i class="fas fa-calendar-alt"></i><span>Eventos</span></a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/listamesaexamen"
+              [ngClass]="{ active: activeLink === '/listamesaexamen' }"
+              (click)="setActiveLink('/listamesaexamen')"
+              ><i class="fas fa-clipboard-list"></i><span>Mesas finales</span></a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/materias"
+              [ngClass]="{ active: activeLink === '/materias' }"
+              (click)="setActiveLink('/materias')"
+              ><i class="fas fa-book"></i><span>Materias</span></a
+            >
+          </li>
+
+          <li>
+            <a
+              routerLink="/listanotificaciones"
+              [ngClass]="{ active: activeLink === '/listanotificaciones' }"
+              (click)="setActiveLink('/listanotificaciones')"
+              ><i class="fas fa-bell"></i><span>Notificaciones</span></a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/mensajes"
+              [ngClass]="{ active: activeLink === '/mensajes' }"
+              (click)="setActiveLink('/mensajes')"
+              ><i class="fas fa-envelope"></i><span>Mensajes</span></a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/configuracion"
+              [ngClass]="{ active: activeLink === '/configuracion' }"
+              (click)="setActiveLink('/configuracion')"
+              ><i class="fas fa-cogs"></i><span>Configuración</span></a
+            >
+          </li>
+          <li>
+            <a
+            (click)="logout()"
+              ><i class="fas fa-sign-out-alt fa-flip-horizontal">
+
+              </i><span>Salir</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+</div>

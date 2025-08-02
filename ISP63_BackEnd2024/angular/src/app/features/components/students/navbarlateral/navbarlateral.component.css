@@ -1,0 +1,78 @@
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: #4d44b5;
+    height: 100vh;
+    padding: 20px;
+}
+
+.Logo {
+    width: 130px;
+    /* Ajusta el tamaño según tus necesidades */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    display: block;
+    margin: 0 auto;
+    /* Centra la imagen horizontalmente */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin-bottom: 20px;
+    height: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #C1BBEB;
+    display: block;
+    font-size: 20px;
+}
+
+nav a:hover {
+    background-color: #f3f4ffa6;
+    color: #4D44B5;
+    border-radius: 40px 0px 0px 40px;
+    border: white;
+    border-color: white;
+    width: auto;
+    height: 40px;
+}
+
+/*i {
+    width: 32px;
+    position: relative;
+    height: 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+}*/
+
+.icofont-search {
+    width: 100px;
+    height: 60px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+li a {
+    display: flex;
+    align-items: center;
+    /* Alinea verticalmente los elementos */
+}
+
+li a i {
+    margin-right: 8px;
+    /* Espacio entre el ícono y el texto */
+}
+
+li a p {
+    margin: 0;
+    /* Elimina el margen del párrafo */
+}

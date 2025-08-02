@@ -1,0 +1,151 @@
+
+<div class="body container-fluid " >
+
+ <div class="filtros row mb-3 justify-content-center no-print">
+
+
+      
+
+        
+        <div class=" col-md-12 d-md-flex justify-content-center no-print ">
+
+
+          <div class="col-md col-12 row justify-content-md-start justify-content-center">
+
+            <div class="col-md-4 col-10 my-3 mx-2">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Buscar" (input)="buscarAlumno($event)">
+                    <a routerLink="" class="iconBusc input-group-text">
+                        <span><i class="fas fa-search"></i></span>
+                    </a>
+                </div>
+            </div>
+          </div>
+
+            <div class="col-md col-12 row justify-content-md-end justify-content-center">
+
+            <div class="col-md-4 col-5 mx-2 my-3">
+                <select class="form-select auto " id="selectCarrera" (change)="filtrarPorCarrera($event)">
+                    <option disabled selected hidden>Carrera</option>
+                    <option value="0">Todas las carreras</option>
+                    <option *ngFor="let carrera of carreras" [value]="carrera.id">
+                        {{ carrera.carrera}}
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div class="col-md-4 col-5 mx-2 my-3">
+                <select class="form-select auto " id="selectCarrera" (change)="filtrarPorLocalidad($event)">
+                    <option disabled selected hidden>Localidad</option>
+                    <option value="0">Todas las Localidades</option>
+                    <option *ngFor="let localidad of localidades" [value]="localidad.id">
+                        {{ localidad.localidad}}
+                    </option>
+                </select>
+            </div>
+          </div>
+
+        </div>
+
+
+       
+    </div>
+    <div class="table-responsive">
+        <table id="tablaAlumInsc" class="table table-hover text-center align-middle">
+          <thead>
+            <tr>
+              <th colspan="6" class="table-title text-center">
+                Listado de Alumnos
+              </th>
+            </tr>
+            <tr>
+             
+              <th>Nombre</th>
+              <th>DNI</th>
+              <th >Localidad</th>
+             <th>Carrera</th>
+             
+              <th>Telefono</th>
+              <th>Correo</th>
+              
+             
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="filteredInscripMesas.length === 0">
+              <td colspan="6" class="text-center">No hay alumnos</td>
+            </tr>
+            <ng-container *ngFor="let alumno of filteredInscripMesas; let i = index">
+              <tr>
+               
+          
+                <td>{{alumno.apellidoyapellido}}</td>
+                <td>{{alumno.dni}}</td>
+                <td>{{alumno.localidad}}</td>
+                <td>{{alumno.carrera}}</td>
+                
+                <td>{{alumno.telefono}}</td>
+                
+                <td class="max-w-[100px] break-all">{{ alumno.email || 'No registrado' }}</td>
+
+
+
+               
+              </tr>
+            </ng-container>
+            <tr>
+              <td colspan="6" class="text-end no-print">
+                <div class="d-inline-flex">
+                  <canvas id="canvasElement" style="display: none; "></canvas>
+                  <button class="btn btn-primary btn-sm mx-5" (click)="aPdf('canvasElement', 'contenedor')">Imprimir Listado</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+</div>
+
+<div id="contenedor" class="flex justify-center items-center h-screen mx-5" style="display: none;">
+  <div class="bg-white p-4 rounded-lg w-full flex flex-col justify-center">
+
+  
+    <h3 class="text-xl font-semibold mb-4 text-center">Información de Alumnos</h3> 
+    <hr>
+   
+    <div class="flex justify-center mx-4"> 
+      <p class="my-2 mx-4">Carrera: <b>{{ carreraimpr ? carreraimpr : 'Todas las carreras' }}</b></p>
+      <p class="my-2 mx-4">Localidad: <b>{{ localimpr ? localimpr : 'Todas las localidades' }}</b></p>
+    </div>
+    
+    <hr>
+
+    <div class="grid grid-cols-6 gap-4 border-b border-gray-400 pb-2">
+      <div class="font-bold text-left flex items-center max-w-[150px] text-sm">Nombre y Apellido</div>
+      <div class="font-bold text-left flex items-center max-w-[100px] text-sm">D.N.I</div>
+      <div class="font-bold text-left flex items-center max-w-[150px] text-sm">Localidad</div>
+      <div class="font-bold text-left flex items-center max-w-[200px] text-sm">Carrera</div>
+      <div class="font-bold text-left flex items-center max-w-[100px] text-sm">Teléfono</div>
+      <div class="font-bold text-left flex items-center max-w-[100px] text-sm">Email</div>
+    </div>
+    
+    <ng-container *ngFor="let alumno of filteredInscripMesas; let i = index">
+      <div class="grid grid-cols-6 gap-4 border-b border-gray-300 py-2">
+        <div class="text-left flex items-center max-w-[150px] mx-1  text-sm">{{ alumno.apellidoyapellido }}</div>
+        <div class="text-left flex items-center max-w-[100px]  text-sm">{{ alumno.dni }}</div>
+        <div class="text-left flex items-center max-w-[150px]  text-sm">{{ alumno.localidad }}</div>
+        <div class="text-left flex items-center max-w-[200px]  text-sm">{{ alumno.carrera }}</div>
+        <div class="text-left flex items-center max-w-[100px]  text-sm">{{ alumno.telefono }}</div>
+        <div class="text-left flex items-center max-w-[100px] break-all text-sm">{{ alumno.email || 'No registrado' }}</div>
+      </div>
+    </ng-container>
+    <div *ngIf="filteredInscripMesas.length === 0" class="text-center text-gray-500 py-2">
+      No hay inscriptos
+    </div>
+  </div>
+</div>

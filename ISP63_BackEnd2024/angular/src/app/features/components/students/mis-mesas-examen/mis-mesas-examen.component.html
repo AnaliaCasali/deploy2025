@@ -1,0 +1,140 @@
+<div class="body container-fluid">
+ 
+    
+    
+    <div class="filtros row mb-3 justify-content-end no-print">
+  
+      <div class="col-md-3 col-10">
+          <div class="input-group">
+              <input type="text" class="form-control" placeholder="Buscar" (input)="buscarMesa($event)">
+              <a routerLink="" class="input-group-text">
+                  <i class="fas fa-search"></i>
+              </a>
+          </div>
+      </div>
+    
+      <div class="col-2 d-flex d-md-none justify-content-end no-print">
+          <button class="btn btnfiltros" (click)="toggleFilters()">
+              <i class="fa-solid fa-sliders" style="color: #000000;"></i>
+          </button>
+      </div>
+  
+   
+  
+     
+      <div class="d-none col-md-9 d-md-flex justify-content-end no-print ">
+  
+        <div class="col-md-2 mx-2">
+            <select class="form-select" id="selectEstado" (change)="filtrarPorEstado($event)">
+                <option disabled selected hidden>Estado</option>
+                <option value="PENDIENTE">Pendiente</option>
+                <option value="APROBADO">Aprobado</option>
+                <option value="RECHAZADO">Rechazado</option>
+            </select>
+        </div>
+
+     
+          <div class="col-md-2 mx-2">
+              <select class="form-select" id="selectLlamado" (change)="filtrarPorLlamado($event)">
+                  <option disabled selected hidden>Llamado</option>
+                  <option value="PRIMERO">1° Llamado</option>
+                  <option value="SEGUNDO">2° Llamado</option>
+                  <option value="UNICO">Llamado único</option>
+              </select>
+          </div>
+  
+        
+  
+          <div class="col-md-2 mx-2">
+              <select class="form-select" id="selectAño" (change)="filtrarPorAnio($event)">
+                  <option disabled selected hidden>Año</option>
+                  <option *ngFor="let anio of aniosDisponibles" [value]="anio.value">{{ anio.label }}</option>
+              </select>
+          </div>
+  
+          
+      </div>
+  </div>
+  
+  
+   
+      @if (showFilters) {
+          <div class="filters-mobile d-md-none no-print">
+  
+            
+              <div class=" no-print" >
+                  <select class="form-select" id="selectLlamado" [(ngModel)]="selectedLlamado" (change)="filtrarPorLlamado($event)">
+                      <option [ngValue]="null" disabled hidden *ngIf="!selectedLlamado">Llamado</option>
+                      <option value="PRIMERO">1° Llamado</option>
+                      <option value="SEGUNDO">2° Llamado</option>
+                      <option value="UNICO">Llamado único</option>
+                  </select>
+     
+              </div>
+  
+  
+  
+              <div class="my-2 no-print">
+                  <select class="form-select" id="selectAño" [(ngModel)]="selectedAnio" (change)="filtrarPorAnio($event)">
+                      <option [ngValue]="null" disabled hidden *ngIf="!selectedAnio">Año</option>
+                      <option *ngFor="let anio of aniosDisponibles" [value]="anio.value">{{ anio.label }}</option>
+               
+                  </select>
+              </div>
+  
+         
+  
+          </div>
+      }
+  
+  
+  <br>
+  
+  
+  </div>
+  
+  <div class="table-responsive">
+    <table id="tablaAlumInsc" class="table table-hover text-center align-middle">
+      <thead>
+        <tr>
+          <th colspan="8" class="table-title text-center">Mis mesas de examen</th>
+        </tr>
+        <tr>
+          
+          <th>Llamado</th>
+          <th>Fecha y Hora</th>
+          <th>Año</th>
+          <th>Asignatura</th>
+          
+          <th>Tribunal</th>
+          <th>Estado de Inscripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr *ngIf="mesasFiltradas.length === 0">
+          <td colspan="9" class="text-center">
+            <p>No hay mesas disponibles</p>
+          </td>
+        </tr>
+  
+        
+        <ng-container *ngFor="let mesa of mesasFiltradas; let i = index">
+          <tr>
+          
+            <td>{{ mesa.llamado }}</td>
+            <td>{{ mesa.fechayHora }}</td>
+            <td>{{ mesa.anio }}° Año</td>
+            <td>{{ mesa.asignatura }}</td>
+            
+            <td>{{ mesa.tribunal }}</td>
+            <td>{{mesa.estado}}</td>
+          </tr>
+        </ng-container>
+  
+        
+      </tbody>
+    </table>
+  </div>
+  
+  

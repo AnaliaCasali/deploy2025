@@ -1,0 +1,265 @@
+
+
+
+<!--////DE NUEVO//////////////////////--->
+<div class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
+  <ul class="flex justify-center -mb-px">
+    <li id="primero" class="mr-2">
+      <a href="javascript:void(0)"  (click)="setActiveTab('primero')" [ngClass]="{'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500': activeTab === 'primero'}" class="inline-block px-4 py-2 rounded-t-lg">1º Año</a>
+    </li>
+    <li id="segundo" class="mr-2">
+      <a href="javascript:void(0)"  (click)="setActiveTab('segundo')" [ngClass]="{'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500': activeTab === 'segundo'}" class="inline-block px-4 py-2 rounded-t-lg">2º Año</a>
+    </li>
+    <li id="tercero" class="mr-2">
+      <a href="javascript:void(0)"  (click)="setActiveTab('tercero')" [ngClass]="{'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500': activeTab === 'tercero'}" class="inline-block px-4 py-2 rounded-t-lg">3º Año</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Contenido de tabs -->
+<div *ngIf="activeTab === 'primero'">
+  <h1 class="flex font-bold justify-center text-4xl mt-4">Plan de Estudios – Tecnicatura 1°</h1>
+  <!-- Tabla del 1º Año -->
+
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <!-- Código de la tabla para 1º Año -->
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
+          <tr class="header">
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Campos</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Materias</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Año</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Régimen</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Hs cátedras</p>
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th scope="row" class="px-10 py-4 font-normal text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 text-center text-lg">
+                  FG
+              </th>
+              <td class="px-6 py-4 text-center text-lg">
+                  Comunicación <br> Unidad de Definición Institucional I
+              </td>
+              <td class="px-6 py-4 text-center text-lg">1°</td>
+              <td class="px-6 py-4 text-center text-lg">
+                  Cuatr. 1 <br> Cuatr. 2
+              </td>
+              <td class="px-6 py-4 text-center text-lg">
+                  3 <br> 3
+              </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th scope="row" class="px-10 py-4 font-normal text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 text-center text-lg">
+                  FF
+              </th>
+              <td class="px-6 py-4 text-center text-lg">
+                  Física <br> Matemática y Estadística <br> Química General e Industrial <br> Informática
+              </td>
+              <td class="px-6 py-4 text-center text-lg">1°</td>
+              <td class="px-6 py-4 text-center text-lg">
+                  Anual <br> Anual <br> Anual <br> Cuatr.1
+              </td>
+              <td class="px-6 py-4 text-center text-lg">
+                  3 <br> 3 <br> 3 <br> 3
+              </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th scope="row" class="px-10 py-4 font-normal text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 text-center text-lg">
+                  FE
+              </th>
+              <td class="px-6 py-4 text-center text-lg">
+                  Gestión de las Organizaciones y de la Calidad <br> Sistema de la Representación <br> Mecanica <br> Mantenimiento Industrial I <br> Electrotecnia
+              </td>
+              <td class="px-6 py-4 text-center text-lg">1°</td>
+              <td class="px-6 py-4 text-center text-lg">
+                  Anual <br> Anual <br> Anual <br> Anual <br> Anual
+              </td>
+              <td class="px-6 py-4 text-center text-lg">
+                  4 <br> 3 <br> 3 <br> 4 <br> 3
+              </td>
+          </tr>
+      </tbody>
+  </table>
+
+  </div>
+</div>
+
+<div *ngIf="activeTab === 'segundo'">
+  <h1 class="flex font-bold justify-center text-4xl mt-4">Plan de Estudios – Tecnicatura 2°</h1>
+  <!-- Tabla del 2º Año -->
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <!-- Código de la tabla para 2º Año -->
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
+          <tr class="header">
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Campos</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Unidad curricular</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Año</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Régimen</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Hs cátedras</p>
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th scope="row" class="px-10 py-4 font-normal text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 text-center text-lg">
+                  FG
+              </th>
+              <td class="px-6 py-4 text-center text-lg">
+                  Problemáticas Socio Contemporáneas <br> Unidad de Definición Institucional II
+              </td>
+              <td class="px-6 py-4 text-center text-lg">2°</td>
+              <td class="px-6 py-4 text-center text-lg">
+                  Cuatr. 1 <br> Cuatr. 2
+              </td>
+              <td class="px-6 py-4 text-center text-lg">
+                  3 <br> 3
+              </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th scope="row" class="px-10 py-4 font-normal text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 text-center text-lg">
+                  FF
+              </th>
+              <td class="px-6 py-4 text-center text-lg">
+                  Innovación y Desarrollo Emprendedor
+              </td>
+              <td class="px-6 py-4 text-center text-lg">2°</td>
+              <td class="px-6 py-4 text-center text-lg">
+                  Anual
+              </td>
+              <td class="px-6 py-4 text-center text-lg">
+                  3 
+              </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th scope="row" class="px-10 py-4 font-normal text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 text-center text-lg">
+                  FE
+              </th>
+              <td class="px-6 py-4 text-center text-lg">
+                  Elementos de Máquicas y Mecanismos <br> Tecnología de los Materiales <br> Mantenimiento Industrial II <br> Instalaciones y Máquinas Eléctricas <br> Ingles Técnico
+              </td>
+              <td class="px-6 py-4 text-center text-lg">2°</td>
+              <td class="px-6 py-4 text-center text-lg">
+                  Anual <br> Anual <br> Anual <br> Anual <br> Anual
+              </td>
+              <td class="px-6 py-4 text-center text-lg">
+                  3 <br> 3 <br> 4 <br> 3 <br> 3
+              </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th scope="row" class="px-10 py-4 font-normal text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 text-center text-lg">
+                  FPP
+              </th>
+              <td class="px-6 py-4 text-center text-lg">
+                  Práctica Profesionalizante I
+              </td>
+              <td class="px-6 py-4 text-center text-lg">2°</td>
+              <td class="px-6 py-4 text-center text-lg">
+                  Anual
+              </td>
+              <td class="px-6 py-4 text-center text-lg">
+                  6
+              </td>
+          </tr>
+      </tbody>
+  </table>
+
+  </div>
+</div>
+
+<div *ngIf="activeTab === 'tercero'">
+  <h1 class="flex font-bold justify-center text-4xl mt-4">Plan de Estudios – Tecnicatura 3°</h1>
+  <!-- Tabla del 3º Año -->
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <!-- Código de la tabla para 3º Año -->
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
+          <tr class="header">
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Campos</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Unidad curricular</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Año</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Régimen</p>
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  <p class="text-xl flex justify-center">Hs cátedras</p>
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th scope="row" class="px-10 py-4 font-normal text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 text-center text-lg">
+                  FF
+              </th>
+              <td class="px-6 py-4 text-center text-lg">
+                  Gestión de Seguridad, Salud Ocupacional y Medio Ambiente <br> Ética y Responsabilidad Social <br> Legislación Laboral 
+              </td>
+              <td class="px-6 py-4 text-center text-lg">3°</td>
+              <td class="px-6 py-4 text-center text-lg">
+                   Anual <br> Cuatr. 1 <br> Cuatr. 2
+              </td>
+              <td class="px-6 py-4 text-center text-lg">
+                  3 <br> 3 <br> 3
+              </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th scope="row" class="px-10 py-4 font-normal text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 text-center text-lg">
+                  FE
+              </th>
+              <td class="px-6 py-4 text-center text-lg">
+                  Tecnología del Frío y Calor <br> Mantenimiento Industrial III <br> Automatización y Control <br> 
+                  Abastecimiento, Costos y Control de Gestión del Mantenimiento <br> Neumática y Hidráulica 
+              </td>
+              <td class="px-6 py-4 text-center text-lg">3°</td>
+              <td class="px-6 py-4 text-center text-lg">
+                  Anual <br> Anual <br> Anual<br> Anual <br> Anual
+              </td>
+              <td class="px-6 py-4 text-center text-lg">
+                  3 <br> 4 <br> 3 <br> 3 <br> 3
+              </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th scope="row" class="px-10 py-4 font-normal text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 text-center text-lg">
+                  FPP
+              </th>
+              <td class="px-6 py-4 text-center text-lg">
+                  Práctica Profesionalizante II
+              </td>
+              <td class="px-6 py-4 text-center text-lg">3°</td>
+              <td class="px-6 py-4 text-center text-lg">
+                  Anual
+              </td>
+              <td class="px-6 py-4 text-center text-lg">
+                  6
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  </div>
+</div>

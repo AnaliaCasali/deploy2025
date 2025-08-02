@@ -1,0 +1,214 @@
+<div class="body container-fluid">
+<!--    <header class="seccionPerfil d-flex justify-content-between align-items-center mb-3 no-print">
+      <h2 class="ttlseccion">Lista de mesas de exámen</h2>
+      <div class="iconUsuario d-flex align-items-center no-print">
+        <a routerLink="" class="iconNot no-print"><i class="fas fa-bell fa-1x mx-2"></i></a>
+        <a routerLink="" class="iconMsj no-print"><i class="fas fa-envelope fa-1x mx-2"></i></a>
+        <a routerLink="" class="perfilUser d-flex no-print">
+          <span class="no-print">Nombre<br><small>Tipo Usuario</small></span>
+          <img class="fotoPerfil no-print" src="https://cdn.pixabay.com/photo/2020/06/21/09/48/hill-5324149_640.jpg" alt="imagen alumno">
+        </a>
+      </div>
+    </header>
+  -->
+
+
+
+  <div class="filtros row mb-3 justify-content-end no-print">
+
+    <div class="col-md-3 col-10">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar" (input)="buscarMesa($event)">
+            <a routerLink="" class="input-group-text">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Botón para mostrar filtros en pantallas pequeñas -->
+    <div class="col-2 d-flex d-md-none justify-content-end no-print">
+        <button class="btn btnfiltros" (click)="toggleFilters()">
+            <i class="fa-solid fa-sliders" style="color: #000000;"></i>
+        </button>
+    </div>
+
+ 
+
+    <!-- Filtros para pantallas medianas y grandes -->
+    <div class="d-none col-md-9 d-md-flex justify-content-end no-print ">
+        <!---
+        <div class="col-md-3 col-auto">
+            <button class="btn-agregar-mesa w-100">
+                <p class="mx-3">Agregar Mesa Examen</p>
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+-->
+        
+
+        <!-- Filtro de llamados -->
+        <div class="col-md-2 mx-2">
+            <select class="form-select" id="selectLlamado" (change)="filtrarPorLlamado($event)">
+                <option disabled selected hidden>Llamado</option>
+                <option value="PRIMERO">1° Llamado</option>
+                <option value="SEGUNDO">2° Llamado</option>
+                <option value="UNICO">Llamado único</option>
+            </select>
+        </div>
+
+        <div class="col-md-2 mx-2">
+            <select class="form-select" id="selectCarrera" (change)="filtrarPorCarrera($event)">
+                <option disabled selected hidden>Carrera</option>
+                <option *ngFor="let carrera of carreras" [value]="carrera.id">
+                    {{ carrera.carrera }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-md-2 mx-2">
+            <select class="form-select" id="selectAño" (change)="filtrarPorAnio($event)">
+                <option disabled selected hidden>Año</option>
+                <option *ngFor="let anio of aniosDisponibles" [value]="anio.value">{{ anio.label }}</option>
+            </select>
+        </div>
+
+        <div class="col-md-2 mx-2 ">
+            <canvas id="canvasElement" style="display: none; "></canvas>
+            <button class="btn btn-primary btn-sm" (click)="aPdf('canvasElement', 'contenedor')"
+                  >Descragar PDF <i class="fa-solid fa-file-pdf ml-2"></i></button>
+        </div>
+        
+    </div>
+</div>
+
+
+    <!-- Filtros para pantallas pequeñas -->
+    @if (showFilters) {
+        <div class="filters-mobile d-md-none no-print">
+
+          
+            <div class=" no-print" >
+                <select class="form-select" id="selectLlamado" [(ngModel)]="selectedLlamado" (change)="filtrarPorLlamado($event)">
+                    <option [ngValue]="null" disabled hidden *ngIf="!selectedLlamado">Llamado</option>
+                    <option value="PRIMERO">1° Llamado</option>
+                    <option value="SEGUNDO">2° Llamado</option>
+                    <option value="UNICO">Llamado único</option>
+                </select>
+   
+            </div>
+
+
+
+            <div class="my-2 no-print">
+                <select class="form-select" id="selectCarrera" [(ngModel)]="selectedCarrera" (change)="filtrarPorCarrera($event)">
+                    <option [ngValue]="null" disabled hidden *ngIf="!selectedCarrera">Carrera</option>
+                    <option *ngFor="let carrera of carreras" [value]="carrera.id">
+                        {{ carrera.carrera }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="my-2 no-print">
+                <select class="form-select" id="selectAño" [(ngModel)]="selectedAnio" (change)="filtrarPorAnio($event)">
+                    <option [ngValue]="null" disabled hidden *ngIf="!selectedAnio">Año</option>
+                    <option *ngFor="let anio of aniosDisponibles" [value]="anio.value">{{ anio.label }}</option>
+             
+                </select>
+            </div>
+
+            <div class="col-12 justify-content-end">
+                <div class=" my-2">
+                    <canvas id="canvasElement" style="display: none; "></canvas>
+                    <button class="btn btn-primary btn-sm" (click)="aPdf('canvasElement', 'contenedor')"
+                        >Descragar PDF <i class="fa-solid fa-file-pdf ml-2"></i></button>
+                </div>
+            </div>
+
+        </div>
+    }
+
+
+<br>
+
+
+</div>
+
+
+<div class="cards row ">
+    <div *ngIf="mesasFiltradas.length === 0" class="text-center my-3">
+        <br>
+        <p>No hay mesas disponibles</p>
+        <br>
+      </div>
+      
+      
+    @for (mesa of mesasFiltradas; track $index) {
+        <div class="card m-3" style="max-width: 380px;" [class]="getCardClass(mesa.idCarrera)">
+        <div class="side-highlight"></div>
+            <div class="row g-0 ">
+                <div class="card-header col-md-12">      
+                    <h4 class="card-title m-2">{{ mesa.asignatura }}</h4>
+                    <p>{{mesa.anio}}° Año - {{ mesa.carrera }}</p>
+                </div>
+                <div class="col-md-12">
+                    <div class="card-body">
+                        <div class="card-date">  
+                            <p class="mx-3 text-center">  <i class="bi bi-calendar4"></i> {{mesa.llamado}} Llamado {{mesa.fechayHora}}</p>
+                        </div>
+                            <p class="mx-3"><b>Tribunal:</b> {{mesa.tribunal}}</p>
+                    </div>
+                </div>
+                <!-- Botones de eliminar y editar -->
+                <div class="card-footer d-flex justify-content-end">
+                    <div class="d-flex">
+                        <button class="btn btn-success me-2" routerLink="/agregarmesaexamen/{{mesa.id}}">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-danger" (click)="eliminarMesaExamen(mesa.id)">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+
+</div>
+
+
+<div id="contenedor" class="flex justify-center items-center h-screen mx-5" style="display: none;">
+    <div>
+      <h2 class="text-xl font-semibold mb-4 text-center">CARRERA: {{carreraXid}}</h2>
+  
+      <div class="overflow-x-auto px-4">
+        <table class="min-w-full border border-gray-300">
+          <thead>
+            <tr class="text-gray-700">
+              <th class="p-3 border border-gray-300 text-left">Año</th>
+              <th class="p-3 border border-gray-300 text-left">Asignatura</th>
+              <th class="p-3 border border-gray-300 text-left">Llamado y Fecha</th>
+              <th class="p-3 border border-gray-300 text-left">Tribunal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let mesa of mesasFiltradas; let i = index">
+              <td class="p-3 border border-gray-300 text-left">{{ mesa.anio }}°</td>
+              <td class="p-3 border border-gray-300 font-semibold text-left">{{ mesa.asignatura }}</td>
+              <td class="p-3 border border-gray-300 text-left">
+                <div>Llamado: {{ mesa.llamado }}</div>
+                <div><B>{{ mesa.fechayHora }}</B></div>
+              </td>
+              <td class="p-3 border border-gray-300 text-left">{{ mesa.tribunal }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  

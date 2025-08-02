@@ -1,0 +1,9 @@
+.no-shadow * {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+

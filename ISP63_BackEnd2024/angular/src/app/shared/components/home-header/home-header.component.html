@@ -1,0 +1,54 @@
+
+<header class="bg-transparent absolute z-8 w-full">
+  <nav class="bg-transparent absolute w-full z-10 -top-8 start-0">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between p-4">
+      <a routerLink="/inicio" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="../../../assets/imagenes/c5ae74ab1b4fa9285966da79b3f03dfb.png" class="h-16" alt="IES63 Logo">
+      </a>
+      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <button (click)="toggleMenu()" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+          <span class="sr-only">Menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+        </button>
+      </div>
+      <div [ngClass]="{'hidden': !isMenuOpen, 'block': isMenuOpen}"
+      class="ml-auto items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+        <ul class="flex flex-col p-4 md:p-0 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-transparent">
+          <li>
+            <a routerLink="/inicio" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-white md:hover:text-blue-700 md:p-0" aria-current="page">Inicio</a>
+          </li>
+          <li>
+            <a routerLink="/carreras" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-white md:hover:text-blue-700 md:p-0">Carreras</a>
+          </li>
+
+          <li>
+            <a routerLink="/noticias" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-white md:hover:text-blue-700 md:p-0">Noticias</a>
+          </li>
+
+          <li>
+            <a routerLink="/listaeventos" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-white md:hover:text-blue-700 md:p-0">Eventos</a>
+          </li>
+
+          <li>
+            <a routerLink="/contacto" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-white md:hover:text-blue-700 md:p-0">Contacto</a>
+          </li>
+          <li class="pl-15">
+            <hr>
+          </li>
+
+          <li *ngIf="!inicioSesion">
+            <a id="loginButton" routerLink="/login" class="block py-2 px-3 bg-orange-500 text-white rounded-xl hover:bg-orange-600">Ingresar</a>
+          </li>
+          <li  *ngIf="!inicioSesion">
+            <a id="signupButton" routerLink="/signup" class="block py-2 px-3 bg-orange-500 text-white rounded-xl hover:bg-orange-600">Registrarse</a>
+          </li>
+          <li  *ngIf="inicioSesion">
+            <a id="miperfil"  [routerLink]="miPerfil"  class="block py-2 px-3 bg-orange-500 text-white rounded-xl hover:bg-orange-600">Ir a Mi Perfil</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

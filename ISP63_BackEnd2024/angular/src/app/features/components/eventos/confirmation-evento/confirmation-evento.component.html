@@ -1,0 +1,31 @@
+<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+  <div class="relative py-3 sm:max-w-md sm:mx-auto">
+    <div class="relative px-4 py-8 bg-white mx-4 md:mx-0 shadow border border-gray-200 sm:p-8">
+      <div class="max-w-sm mx-auto text-center">
+        <div class="flex justify-center mb-4">
+          <div class="h-14 w-14 bg-green-200 flex justify-center items-center text-green-500 text-2xl rounded-full">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+        </div>
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">¡Evento Creado!</h2>
+        <p class="text-sm text-gray-500 mb-4">Tu evento ha sido creado exitosamente. Puedes ver los detalles a continuación.</p>
+        <div class="bg-gray-50 border border-gray-200 p-4 mb-6">
+          <h3 class="text-lg font-medium text-gray-700 mb-2">Detalles del Evento:</h3>
+          <p class="text-gray-600">Título: {{ titulo }}</p>
+          <p class="text-gray-600">Subtítulo: {{ subtitulo }}</p>
+          <p class="text-gray-600">Inicio: {{ inicio }}</p>
+          <p class="text-gray-600">Fin: {{ fecha }}</p>
+          <p class="text-gray-600">Descripción: {{ descripcion }}</p>
+          <div class="mt-4">
+            <h3 class="text-lg font-medium text-gray-700 mb-2">Imagen del Evento:</h3>
+            <img [src]="imagen" alt="Imagen del evento" class="w-full h-auto border border-gray-300 rounded-md">
+          </div>
+        </div>
+        <div class="flex justify-center space-x-3">
+          <a href="/crear-evento" class="bg-blue-500 text-white px-4 py-2 border border-blue-500 hover:bg-blue-600">Crear Otro Evento</a>
+          <a href="/" class="bg-gray-300 text-gray-800 px-4 py-2 border border-gray-300 hover:bg-gray-400">Volver a Inicio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

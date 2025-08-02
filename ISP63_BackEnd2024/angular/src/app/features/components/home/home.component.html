@@ -1,0 +1,133 @@
+<section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <!-- Primera vista del carrusel -->
+    <div class="carousel-item active">
+      <div class="flex flex-col md:flex-row justify-center items-center h-[85vh] bg-gradient-to-b from-blue-400 to-blue-900 p-5">
+        <div class="text-center text-white">
+          <h1 class="text-6xl md:text-6xl font-semibold mb-5">
+            <span class="block">Instituto de Educación Superior N° 63</span>
+            <span class="block text-black font-bold">"Natalia Quessús"</span>
+          </h1>
+          <div class="space-x-4">
+            <button 
+              routerLink="/carreras"
+              class="bg-orange-500 text-white py-2 px-6 rounded-full transition-transform hover:scale-105">
+              CARRERAS
+            </button>
+            <button 
+              class="bg-white text-orange-500 py-2 px-6 rounded-full transition-transform hover:bg-orange-500 hover:text-white hover:scale-105" 
+              (click)="scrollToNoticias()">
+              NOTICIAS
+            </button>
+          </div>
+        </div>
+        <div class="ml-8 hidden md:block">
+          <img src="../../../assets/imagenes/img/bach-c.jpg" alt="Estudiante trabajando en computadora" class="w-84 h-72 rounded-full object-cover ">
+        </div>
+      </div>
+    </div>
+
+<!-- Segunda vista del carrusel -->
+<div class="carousel-item">
+  <div class="flex flex-col md:flex-row justify-center items-center h-[85vh] bg-gradient-to-b from-blue-400 to-blue-900 p-5">
+    <div class="text-center text-white">
+      <h1 class="text-5xl md:text-5xl font-semibold mb-5">Tecnicatura Superior en <br> Desarrollo de Software</h1>
+      <p class="text-lg sm:text-xl md:text-lg">El Técnico Superior en Desarrollo de Software será capaz de <br>utilizar las herramientas informáticas existentes y hacerlas funcionar <br>de manera eficaz y eficiente, contemplando en su formación distintas áreas de conocimiento</p>
+    </div>
+    <div class="ml-8 hidden md:block">
+      <img src="../../../assets/imagenes/img/tecnicaturaImagen.png" alt="Logo de tecnicatura" class="w-90 h-72 rounded-full object-cover">
+    </div>
+  </div>
+</div>
+
+
+    <!-- Tercera vista del carrusel -->
+    <div class="carousel-item">
+      <div class="flex flex-col md:flex-row justify-center items-center h-[85vh] bg-gradient-to-b from-blue-400 to-blue-900 p-5">
+        <div class="text-center text-white">
+          <h1 class="text-5xl md:text-5xl font-semibold mb-5">Profesorado de Educación Primaria</h1>
+          <p class="text-lg sm:text-xl md:text-lg">El Instituto ofrece la posibilidad de formar <br>Docentes profesionales definidos por el ejercicio de un rol explícito en áreas <br>generales de competencias en términos de conocimiento, comprensión y habilidades <br>para proponer estrategias de intervención en función de sujetos <br>específicos (los alumnos) en contextos particulares (escuelas de desempeño).</p>
+        </div>
+        <div class="ml-8 hidden md:block">
+          <img src="../../../assets/imagenes/img/primariaImagen.png" alt="Logo primaria" class="w-90 h-72 rounded-full object-cover">
+        </div>
+      </div>
+    </div>
+
+    <!-- Cuarta vista del carrusel -->
+    <div class="carousel-item">
+      <div class="flex flex-col md:flex-row justify-center items-center h-[85vh] bg-gradient-to-b from-blue-400 to-blue-900 p-5">
+        <div class="text-center text-white">
+          <h1 class="text-5xl md:text-5xl font-semibold mb-5">Profesorado en Lengua y Literatura</h1>
+          <p class="text-lg sm:text-xl md:text-lg">El Profesor de Lengua y Literatura puede ejercer la docencia <br>en el nivel medio (EGB y Polimodal). También puede investigar y evaluar el quehacer educativo,<br> tanto en el aula como en la institución escolar a fin de aportar nuevas experiencias y metodologías.</p>
+        </div>
+        <div class="ml-8 hidden md:block">
+          <img src="../../../assets/imagenes/img/lenguaImagen.png" alt="Logo lengua" class="w-90 h-72 rounded-full object-cover">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controles de navegación -->
+  <button class="absolute top-1/2 left-5 -translate-y-1/2 bg-transparent text-white" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </button>
+  <button class="absolute top-1/2 right-5 -translate-y-1/2 bg-transparent text-white" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Siguiente</span>
+  </button>
+</section>
+
+
+ <!-- Tarjetas flotantes -->
+<section class="relative z-10 flex flex-col md:flex-row justify-evenly items-center mt-[-5rem]">
+  <div class="bg-white shadow-lg rounded-lg p-3 text-center transition-transform hover:scale-105 w-80 h-40 mb-4 md:mb-0">
+    <i class="fas fa-map-marker-alt text-4xl text-orange-500 mb-2"></i>
+    <h3 class="text-lg font-medium">Sede Las Toscas</h3>
+    <p>Calle 19 N°411 Las Toscas - Santa Fe</p>
+  </div>
+  <div class="bg-white shadow-lg rounded-lg p-3 text-center transition-transform hover:scale-105 w-80 h-40 mb-4 md:mb-0">
+    <i class="fas fa-phone-alt text-4xl text-orange-500 mb-2"></i>
+    <h3 class="text-lg font-medium">Teléfono</h3>
+    <p>+54 03482 492041</p>
+  </div>
+  <div class="bg-white shadow-lg rounded-lg p-3 text-center transition-transform hover:scale-105 w-80 h-40 mb-4 md:mb-0">
+    <i class="fas fa-envelope text-4xl text-orange-500 mb-2"></i>
+    <h3 class="text-lg font-medium">Correo</h3>
+    <p>instituto63ltoscas&#64;gmail.com</p>
+  </div>
+</section>
+
+<section class="py-16">
+  <app-carrera-listado></app-carrera-listado>
+  <app-noticias-card></app-noticias-card>
+  <app-testimonial></app-testimonial>
+  <app-contacto></app-contacto>
+</section>
+
+<footer class="bg-gray-900 text-white py-8">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div>
+      <h5 class="text-xl font-bold mb-4">Sobre Nosotros</h5>
+      <p>Somos una institución comprometida con la excelencia académica y el desarrollo profesional de nuestros estudiantes.</p>
+    </div>
+    <div>
+      <h5 class="text-xl font-bold mb-4">Enlaces Útiles</h5>
+      <ul>
+        <li><a routerLink="/carreras" class="hover:underline">Carreras</a></li>
+        <li><a routerLink="/noticias" class="hover:underline">Noticias</a></li>
+        <li><a routerLink="/listaeventos" class="hover:underline">Eventos</a></li>
+        <li><a routerLink="/contacto" class="hover:underline">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="text-xl font-bold mb-4">Síguenos</h5>
+      <div class="flex space-x-4">
+        <a href="https://www.facebook.com/ISP63LasToscas" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/isp63.lastoscas" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>

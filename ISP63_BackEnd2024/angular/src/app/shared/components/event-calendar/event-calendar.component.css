@@ -1,0 +1,24 @@
+/* Cambiar el tamaño del texto en el calendario */
+
+
+
+.fc-toolbar h2 {
+  display: inline;
+  color:white;
+}
+.fc-daygrid-event {
+  font-size: 0.875rem; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+.fc-toolbar {
+  background-color: #f8f9fa; /* Change the toolbar background color */
+  padding: 10px;
+}
+
+.fc-button {
+  background-color: #007bff; /* Change button background color */
+  color: white; /* Change button text color */
+}
+
+.fc-button:hover {
+  background-color: #0056b3; /* Change button color on hover */
+}

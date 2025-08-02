@@ -1,0 +1,18 @@
+<div class="min-h-screen bg-gray-50/50">
+  <nav class="block w-full max-w-full bg-transparent text-white shadow-none rounded-xl transition-all px-0 py-1">
+    <app-home-header></app-home-header>
+  </nav>
+  <div class="pt-28 " >
+<!--    <app-carreras-sidebar [carrera]="carreraSelecionada"></app-carreras-sidebar>-->
+    <app-carreras-detalle-sidebar [carrera]="carreraSelecionada"></app-carreras-detalle-sidebar>
+
+  </div>
+
+  <div class="pt-0 xl:ml-80">
+
+      <router-outlet  ></router-outlet>
+
+    <div class="text-blue-gray-600">
+      <app-footer></app-footer>
+    </div>
+  </div>

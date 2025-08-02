@@ -1,0 +1,409 @@
+/* Header */
+header {
+  background-color: transparent;
+  padding: 15px;
+}
+
+.ttlseccion {
+  font-size: 25px;
+  font-weight: bold;
+  color: #4D44B5;
+}
+
+.iconUsuario {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px; 
+  width: auto;
+  height: auto;
+  display: flex;
+  border-radius: 10px;
+  background-color: #ffffffab;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.avatar, .fotoPerfil {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+
+.iconMsj, .iconNot {
+  cursor: pointer;
+  color: rgb(85, 83, 83);
+  text-decoration: none;
+}
+
+.perfilUser {
+  padding: 5px;
+  align-items: center;
+  margin-left: 5px;
+  text-decoration: none;
+  color:black;
+}
+
+@media (max-width: 840px) {
+  header {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      align-items: flex-start;
+  }
+
+  .iconUsuario {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 4px; 
+      width: auto;
+      height: auto;
+  }
+
+  header h2 {
+      font-size: 18px;
+      margin-top: 60px; 
+      margin-left: 10px;
+  }
+
+  .iconMsj, .iconNot {
+      font-size: 10px; 
+      margin: 3px;
+  }
+
+  .fotoPerfil {
+      width: 25px; 
+      height: 25px;
+      margin-left: 5px;
+  }
+
+  .perfilUser span {
+      font-size: 10px; 
+  }
+}
+
+
+/**/
+
+.headerNewMesa, 
+.deletemesa{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.new-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+  text-align: right;
+}
+
+.new-button{
+  background-color: #4caf50;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #f07252;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.new-button:hover.card,
+.delete-button:hover {
+  transform: scale(1.05); 
+}
+
+.fas {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+/*colores por carrera*/
+
+
+.highlight-informatica .side-highlight {
+  background-color: #524abd; 
+}
+
+.highlight-primaria .side-highlight {
+  background-color: #ece930; 
+}
+
+.highlight-lengua .side-highlight {
+  background-color: #f39121; 
+}
+
+.highlight-mantInd .side-highlight {
+  background-color: #a71906; 
+}
+
+.highlight-biolog .side-highlight {
+  background-color: #26a706; 
+}
+
+/*busqueda*/
+
+.input-group {
+    background-color: #b4b4b9;
+    border-radius: 20px;
+}
+
+.input-group-text {
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.opcFiltro, .form-select, .input-group, input[type="text"] {
+    border-radius: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: transparent;
+}
+
+
+.pagination .page-link {
+    color: #4D44B5;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #4D44B5;
+    border-color: #4D44B5;
+}
+
+.btn-primary, .btn-danger, .btn-success {
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.btnAcepInsc {
+    text-align: right;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    width: auto;
+    min-width: 80px;
+}
+
+
+
+/*boton agregar mesa*/
+
+.btn-agregar-mesa {
+  
+  color: #000000; 
+  border: none;
+  padding: 8px; 
+  border: 1px solid rgba(199, 198, 198, 0.267); 
+  font-size: 13px; 
+  font-family: 'Poppins', sans-serif; 
+  border-radius: 20px; 
+  border-color: rgb(212, 210, 210);
+  display: inline-flex; 
+  align-items: center; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+
+
+.btn-agregar-mesa i {
+  color: #000000; 
+  margin-right: 8px;
+  font-size: 18px; 
+}
+
+.btn-agregar-mesa i:hover{
+  color: #ffffff; 
+  margin-right: 8px;
+  font-size: 18px; 
+}
+
+.btn-agregar-mesa:hover {
+  background-color: #0d47a1; 
+  color: white;
+  transform: scale(1.05); 
+}
+
+
+/*tarjetas*/
+
+
+.card {
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  justify-content: center;
+  border-radius: 20px;
+  margin-right: 0px;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  padding-left: 20px;
+  padding-right: 0px;
+  margin: 0px;
+}
+
+
+
+.cards{
+  justify-content: center;
+  
+}
+
+.side-highlight {
+  width: 20px;
+  background-color: #ffcc00;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.side-highlight-new {
+  width: 14px;
+  background-color: #4caf50;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+
+
+.card-date {
+  display: flex;
+  align-items: center;
+  color: #888;
+  font-size: 12px;
+}
+
+
+.card-tribunal {
+  color: #666;
+  font-size: 12px;
+}
+
+
+.card-date {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  font-size: 15px;
+  margin: 3px 0;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  
+}
+
+.card-header {
+  padding: 8px;
+  
+}
+
+.card-title{
+  margin-left: 10px;
+}
+
+h4 {
+  color: #303972;
+  font-size: 17px;
+  font-weight: 600;
+  margin-left: 10px;
+  margin: 5px;
+}
+
+.card-header h4 {
+  margin: 0;
+}
+
+.card-header p {
+  margin: 5px;
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+.card-body {
+  
+  background-color: white;
+  padding: 5px;
+  
+}
+
+.card-body p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+i.bi-calendar4 {
+  margin-right: 5px;
+  
+}
+
+/* Filtros de búsqueda */
+
+.opcFiltro, .form-select, .input-group, input[type="text"] {
+  border-radius: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: transparent;
+}
+
+.form-select {
+  width: 100%;
+  font-size: 14px;
+  padding-right: 30px;
+  border-radius: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-select, .option{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 20px;
+}
+
+.input-group {
+  background-color: #ffffff;
+}
+

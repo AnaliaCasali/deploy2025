@@ -1,0 +1,192 @@
+/* Estilos de la barra lateral */
+.sidebar {
+  background-color: #4D44B5; 
+  height: 100vh; 
+  display: flex;
+  width: 280px;
+  flex-direction: column;
+  align-items: center;
+  position: fixed; 
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+}
+
+/* Logo */
+.logo-container {
+  margin-top: 2%;
+  margin-bottom: 0%;
+  text-align: center;
+}
+
+.logo {
+
+  max-width: 90px;
+  height: 100px;
+}
+
+/* Estilos del menú */
+.menu {
+  
+  margin-left: 20px;
+  width: 100%;
+  
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 30px;
+  
+  
+}
+
+.menu li {
+  width: auto;
+  text-align: left;
+  font-size: 14px;
+  margin: 6px ;
+  justify-content: center;
+  margin-right: 0px;
+  
+}
+
+.menu a {
+  flex: 1; 
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start; 
+  padding: 9px 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  gap: 10px;
+  cursor: pointer; 
+  width: 100%;
+  box-sizing: border-box;
+  
+}
+
+.menu a i {
+  justify-content: center;
+  margin-right: 10px; 
+  font-size: 18px;
+}
+
+.menu a span {
+  display: block;
+}
+
+/* Estilo para el enlace activo */
+.menu a.active {
+background-color: #ffffff; 
+color: #4D44B5; 
+border-radius: 40px 0px 0px 40px; 
+width: auto; 
+height: 39px;
+}
+
+/* Estilo de hover activo */
+.menu a:hover {
+border: 0.5px solid #ffffff; 
+border-radius: 40px 0px 0px 40px; 
+border-right: 0px;
+background-color: transparent; 
+width: auto; 
+height: 39px; 
+}
+
+.menu a.active:hover {
+background-color: #ffffff; 
+color: #4D44B5; 
+border: none; 
+}
+
+
+/* Alinear iconos a la izquierda */
+.icono-izquierda {
+  margin-right: 10px; 
+  font-size: 18px;
+  min-width: 30px; 
+  text-align: left; 
+}
+
+
+/* Botón de mostrar el aside */
+
+
+.mobile-button {
+  display: none;
+  background-color: transparent;
+  color: #3d3d3d; 
+  border: none;
+  padding: 5px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  z-index: 1000;
+}
+
+
+/* Estilos responsivos para el aside */
+
+@media (max-width: 1250px) {
+  .mobile-button {
+    display: block;
+    background-color: transparent;
+    color: #3d3d3d; 
+    border: none;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    z-index: 1000;
+  }
+
+  .menu {
+  
+    overflow-y: auto;
+    width: 100%;
+    height: 100vh;
+  }
+
+ .contAside{
+  overflow-y: auto;
+ }
+
+.menu ul {
+  flex: 1 ;
+  list-style: none;
+  padding: 0;
+  margin-left: 30px;
+ 
+}
+
+
+  .sidebar {
+    overflow-y: auto;
+    max-width: 100%;
+    
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    z-index: 999;
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease; 
+  }
+
+  .sidebar.menu-visible {
+    transform: translateX(0); 
+  }
+
+  .mobile-button.menu-open {
+    color: #ffffff; 
+  }
+}

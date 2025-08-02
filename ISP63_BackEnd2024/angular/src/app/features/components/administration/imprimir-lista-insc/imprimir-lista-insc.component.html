@@ -1,0 +1,55 @@
+
+<div id="contenedor" class="p-10">
+         
+    <hr class="border-2 my-3">
+    <h3 class="my-2 mx-1"><b>INSCRIPTOS A MESAS DE EXAMEN</b></h3>
+    <hr class="border-2 border-black my-3">
+
+
+
+
+    <p class="my-2 ml-5">Llamado: <b>{{llamadoSeleccionada}}</b></p>
+    
+    <p class="my-2 ml-5">Asignatura: <b>{{materiaSeleccionada}}</b></p>
+
+    <p class="my-2 ml-5">Año: <b>{{anioSeleccionada}}</b></p>
+    
+    <p class="my-2 ml-5">Carrera: <b>{{carreraXid}}</b></p>
+    
+
+<hr class="border-2 border-black my-3">   
+
+<div>
+    <table class="table-auto w-full border-collapse border border-gray-400">
+        <thead>
+            <tr>
+              
+                
+                <th class="border border-gray-400 px-2 py-1 text-center" rowspan="2">Apellido y Nombre</th>
+                <th class="border border-gray-400 px-2 py-1 text-center" rowspan="2">D.N.I</th>
+                </tr>
+            
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let alumno of inscriptos; let i = index">
+            <tr class="border-t-2 border-gray-600">
+     
+                
+                <td class="border border-gray-400 px-2 py-2 text-start">{{alumno.nombreApellido}}</td>
+                <td class="border border-gray-400 px-2 py-2 text-center">{{alumno.dni}}</td>             
+            </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+
+<canvas id="canvasElement" style="display: none; "></canvas>
+
+<div class="w-full flex justify-content-end">
+    <button 
+        (click)="aPdf('canvasElement', 'contenedor')" 
+        class="px-4 py-2 my-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-200 ease-in-out transform hover:-translate-y-1">
+        Generar PDF
+    </button>
+  </div>
+  

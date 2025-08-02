@@ -1,0 +1,30 @@
+<div class="main-cont">
+    <div class="row w-100">
+        <div class="col-md-6 image-cont d-none d-md-flex">
+            <img class="imgLogin" src="assets/imagenes/7de62d17fdb021bae96c708fc93a08a22.jpeg" alt="Login Image">
+        </div>
+        <div class="col-md-6 login-container">
+            <form class="login-form">
+                <h2>Iniciar Sesión</h2>
+
+                <label for="txtUsername">Usuario</label>
+                <input  [(ngModel)]="user" type="text" id="txtUsername" name="txtUsername" placeholder="Nombre de Usuario" required>
+
+                <label for="txtPassword">Password</label>
+                <input  [(ngModel)]="password" type="password" id="txtPassword" name="txtPassword" placeholder="Password" required>
+
+                <button (click)="login()" type="submit" class="login-button">Ingresar</button>
+
+                <p class="signup-link">¿No tenés cuenta? <a routerLink="singUp" routerLinkActive="active">Registrate</a></p>
+<!--                <div class="social-login mt-3">
+                    <a routerLink="/#" class="loginRedes-button m-3">
+                        <i class="fa-brands fa-facebook" style="color: #0f5ee6;"></i> Login with Facebook
+                    </a>
+                    <a routerLink="/#" class="loginRedes-button m-3">
+                        <i class="fa-brands fa-google" style="color: #e72323;"></i> Login with Google
+                    </a>
+                </div>-->
+            </form>
+        </div>
+    </div>
+</div>

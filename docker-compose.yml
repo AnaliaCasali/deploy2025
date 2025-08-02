@@ -1,0 +1,90 @@
+services:
+  caddy:
+    image: caddy:2.7-alpine
+    container_name: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+      - angular_dist:/usr/share/nginx/html
+    environment:
+      ACME_AGREE: "true"
+    networks:
+      - ies63_network
+    restart: unless-stopped
+
+  angular_app:
+    build:
+      context: ISP63_BackEnd2024/angular
+    container_name: angular_app
+    volumes:
+      - angular_dist:/dist
+    command: sh -c "npm install && npm run build --prod && cp -r /app/dist/isp63-front-end2024/* /dist/"
+    networks:
+      - ies63_network
+
+  ies63_backend:
+    container_name: ies63_backend
+    build:
+      context: ISP63_BackEnd2024
+    user: "1000:1000"
+    mem_limit: 512m
+    cpus: "0.5"
+    environment:
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_PORT: ${DATABASE_PORT}
+      SECRET_KEY: ${SECRET_KEY}
+      EXPIRATION: ${EXPIRATION}
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+    ports:
+      - "8080:8080"    
+    restart: always
+    depends_on:
+      bd_ies63:
+        condition: service_healthy
+    networks:
+      - ies63_network
+
+  bd_ies63:
+    image: mysql:8.0.33
+    container_name: bd_ies63
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 10
+    networks:
+      - ies63_network
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: bd_ies63
+      MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+      MYSQL_USER: '${MYSQL_USER}'
+      MYSQL_PASSWORD: '${MYSQL_PASSWORD}'
+    depends_on:
+      - bd_ies63
+    networks:
+      - ies63_network
+networks:
+  ies63_network:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:
+  angular_dist:

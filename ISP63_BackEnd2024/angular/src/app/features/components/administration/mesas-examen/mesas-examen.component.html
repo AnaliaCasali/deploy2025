@@ -1,0 +1,108 @@
+<main class="flex justify-center items-center min-h-screen">
+    <form (ngSubmit)="onSubmit()" class="bg-white p-6 rounded-lg shadow-md w-full">
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800">Crear mesa de examen</h2>
+
+        <div class="grid grid-cols-3 gap-4 mb-4">
+            <!--Llamado-->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Llamado</label>
+                <select [(ngModel)]="mesaExamen.llamado" name="llamado"
+                    class="form-control w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    @for (llamado of llamadoTurnos; track $index) {
+                    <option value="" disabled selected hidden>Selecciona un llamado</option>
+                    <option [value]="llamado">{{ llamado }}</option>
+                    }
+                </select>
+            </div>
+            <!-- Turno -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Turno</label>
+                <select [(ngModel)]="mesaExamen.turno" name="turno"
+                    class="form-control w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    @for (turno of turnos; track $index) {
+                    <option value="" disabled selected hidden>Selecciona un turno</option>
+                    <option [value]="turno.id">{{ turno.turno }} </option>
+                    }
+                </select>
+            </div>
+            <!-- Fecha y Hora -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Fecha y Hora</label>
+                <input [(ngModel)]="mesaExamen.fechaHora" name="fechaHora" type="datetime-local"
+                    class="form-control w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-4">
+            <!-- Carrera -->
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Carrera</label>
+                <select [(ngModel)]="selectedCarreraId" (change)="onCarreraChange(selectedCarreraId)" name="carrera" required
+                    class="form-control w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="" disabled hidden>Seleccione una Carrera</option>
+                    <option *ngFor="let carrera of carreras" [value]="carrera.id">{{ carrera.carrera }}</option>
+                </select>
+            </div>
+            <!-- Asignatura -->
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Asignatura</label>
+                <select [(ngModel)]="mesaExamen.asignatura" name="asignatura" required
+                    class="form-control w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    @for (asignatura of asignaturas; track $index) {
+                    <option value="" disabled selected hidden>Seleccione una Asignatura</option>
+                    <option [value]="asignatura.id">{{asignatura.carrera_id}} {{ asignatura.asignatura}} Año {{asignatura.anio}}°
+                    </option>
+                    }
+            
+                </select>
+            </div>
+            
+        </div>
+
+        <!-- Presidente -->
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Presidente</label>
+            <select [(ngModel)]="mesaExamen.presidente" name="presidente" req
+                class="form-control w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                @for (presidente of docentes; track $index) {
+                <option value="" disabled selected hidden>Selecciona un Presidente para la Mesa de Examen</option>
+                <option [value]="presidente.dni">{{ presidente.nombre }} {{ presidente.apellido }}</option>
+                }
+            </select>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4 mb-4">
+            <!-- Vocal 1 -->
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Vocal 1</label>
+                <select [(ngModel)]="mesaExamen.vocal1" name="vocal1" required
+                    class="form-control w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    @for (vocal1 of docentes; track $index) {
+                    <option value="" disabled selected hidden>Selecciona el Vocal 1</option>
+                    <option [value]="vocal1.dni">{{ vocal1.nombre}} {{ vocal1.apellido}}</option>
+                    }
+                </select>
+            </div>
+            
+            <!-- Vocal 2 -->
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Vocal 2</label>
+                <select [(ngModel)]="mesaExamen.vocal2" name="vocal2" required
+                    class="form-control w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    @for (vocal2 of docentes; track $index) {
+                    <option value="" disabled selected hidden>Selecciona el Vocal 2</option>
+                    <option [value]="vocal2.dni">{{ vocal2.nombre}} {{ vocal2.apellido}}</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        
+        <!-- Botón de Guardar -->
+        <div class="flex justify-content-end">
+            <button type="submit" 
+            class="bg-blue-500 text-white py-3 px-20 rounded-md hover:bg-blue-600">
+            {{ modoEdicion ? 'Actualizar' : 'Crear' }}</button>
+        </div>
+    </form>
+</main>

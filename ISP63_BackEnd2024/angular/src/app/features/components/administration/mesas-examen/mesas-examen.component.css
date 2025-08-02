@@ -1,0 +1,15 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    /*font-weight: bold;*/
+    height: 50px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    background-color: #4D44B5;
+    border-radius: 20px 20px 0px 0px;
+}

@@ -1,0 +1,92 @@
+/*Barra lateral derecha*/
+aside {
+    width: 250px;
+    height: calc(100vh - 40px);
+    /* Ajusta la altura para considerar el espacio superior */
+    background-color: #f9f9f9;
+    position: fixed;
+        /* Fijado en el lado derecho */
+    right: 0;
+        /* Al lado derecho de la pantalla */
+    top: 0;
+    width: 300px;
+        /* Ancho del aside */
+    height: 100vh;
+        /* Ocupa toda la altura de la pantalla */
+    z-index: 1000;
+        /* Asegurarse de que esté por encima del contenido principal */
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    /* Mantener para alinear contenido */
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.parrafo {
+    color: #303972;
+}
+
+.parrafo2 {
+    color: #A098AE;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #303972;
+}
+
+h5 {
+    color: #303972;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 22px;
+}
+
+button.more p {
+    width: 90%;
+    padding: 10px;
+    background-color: #555;
+    color: #4D44B5;
+    cursor: pointer;
+    border: none;
+    border-radius: 40px 40px 40px 40px;
+    background: rgba(77, 68, 181, 0.10);
+}
+
+button.more:hover p {
+    background-color: #4D44B5;
+    color: white;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    aside {
+        display: none;
+    }
+}

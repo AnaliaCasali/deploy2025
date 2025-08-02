@@ -1,0 +1,68 @@
+
+
+<h2 class="text-2xl font-bold mb-6">CREAR CARRERA</h2>
+<form (ngSubmit)="saveCarrera()" #carreraForm="ngForm" class="bg-white shadow-md rounded-lg p-6">
+  <div class="mb-4">
+    <label for="carrera" class="block text-sm font-medium text-gray-700">Carrera</label>
+    <input required type="text" [(ngModel)]="carrera.carrera" name="carrera"
+           class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm
+                  focus:ring focus:ring-blue-500 focus:border-blue-500
+                  p-2" />
+  </div>
+
+  <div class="mb-4">
+    <label for="plan" class="block text-sm font-medium text-gray-700">Plan</label>
+    <input required type="text" [(ngModel)]="carrera.plan" name="plan"
+           class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm
+                  focus:ring focus:ring-blue-500 focus:border-blue-500
+                  p-2" />
+  </div>
+
+  <div class="mb-4">
+    <label for="duracion" class="block text-sm font-medium text-gray-700">Duración</label>
+    <input required type="number" [(ngModel)]="carrera.duracion" name="duracion"
+           class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm
+                  focus:ring focus:ring-blue-500 focus:border-blue-500
+                  p-2" />
+  </div>
+
+  <div class="mb-4">
+    <label for="campoOcupacional" class="block text-sm font-medium text-gray-700">Campo Ocupacional</label>
+    <input required type="text" [(ngModel)]="carrera.campoOcupacional" name="campoOcupacional"
+           class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm
+                  focus:ring focus:ring-blue-500 focus:border-blue-500
+                  p-2" />
+  </div>
+  <div class="mb-4">
+    <label for="link" class="block text-sm font-medium text-gray-700">Link</label>
+    <input required type="text" [(ngModel)]="carrera.link" name="link"
+           class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm
+                  focus:ring focus:ring-blue-500 focus:border-blue-500
+                  p-2" />
+  </div>
+
+  <div class="mb-4">
+    <label for="sede" class="block text-sm font-medium text-gray-700">Sede</label>
+    <select required [(ngModel)]="carrera.sede" name="sede"
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm
+                   focus:ring focus:ring-blue-500 focus:border-blue-500
+                   p-2">
+      <option *ngFor="let elemento of sedes" [value]="elemento">{{ elemento }}</option>
+    </select>
+  </div>
+
+  <div class="mb-4">
+    <label for="logoFile" class="block text-sm font-medium text-gray-700">Logo (Imagen)</label>
+    <input type="file" required (change)="onFileSelected($event)" name="logoFile"
+           class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm
+                  focus:ring focus:ring-blue-500 focus:border-blue-500
+                  p-2" />
+  </div>
+
+  <button type="submit" [disabled]="!carreraForm.valid"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Guardar
+  </button>
+</form>
+
+

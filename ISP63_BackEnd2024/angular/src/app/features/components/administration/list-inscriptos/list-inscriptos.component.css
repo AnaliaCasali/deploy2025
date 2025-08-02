@@ -1,0 +1,254 @@
+/* Estilos generales */
+
+header {
+    background-color: transparent;
+    padding: 15px;
+}
+
+h2 {
+   font-weight: bold;
+   color: #4D44B5;
+   
+   font-size: 25px;
+   
+}
+
+.table {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 5px;
+}
+
+th {
+    background-color: #e7e7ff;
+    color: #4D44B5;
+     text-align: left;
+     vertical-align: middle;
+}
+
+td, .ttlcarrera, .infcarrera {
+    vertical-align: middle;
+    max-width: 180px !important;
+    text-align: left;
+    min-width: 50px;
+    margin: 8px;
+
+
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+} 
+.fotoPerfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 8px;
+    
+}
+
+.fotoPerfil {
+    height: 50px;
+    width: 50px;
+    margin-left: 8px;
+}
+
+.pagination .page-link {
+    color: #4D44B5;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #4D44B5;
+    border-color: #4D44B5;
+}
+
+/* Estilos del perfil y los iconos */
+
+.iconUsuario {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px; 
+    width: auto;
+    height: auto;
+    display: flex;
+    border-radius: 10px;
+    background-color: #ffffffab;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconMsj, .iconNot, .perfilUser {
+    cursor: pointer;
+    color: rgb(85, 83, 83);
+    text-decoration: none;
+}
+
+.perfilUser {
+    padding: 5px;
+    align-items: center;
+    margin-left: 5px;
+}
+
+/* Filtros de búsqueda */
+
+.opcFiltro, .form-select, .input-group, input[type="text"] {
+    border-radius: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: transparent;
+}
+
+.form-select {
+    width: 100%;
+    font-size: 14px;
+    padding-right: 30px;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form-select, .option{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 20px;
+}
+
+.input-group {
+    background-color: #ffffff;
+}
+
+.copy-alert {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    max-width: 300px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.534);
+    background-color: #bae08d;
+    text-align: center;
+}
+
+.table-title {
+    padding: 7px;
+    text-align: left;
+    font-size: 17px;
+    font-weight: normal;
+    color: #fff;
+    background-color: #4D44B5;
+}
+
+.checkbox {
+    width: 12px;
+    height: 12px;
+    transform: scale(1.5);
+}
+
+
+
+
+
+
+.infcarrera {
+    max-width: 180px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.btn-primary, .btn-danger, .btn-success {
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.btnfiltros {
+    padding: 7px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid rgb(224, 224, 224); 
+}
+
+
+.btnAcepInsc {
+    text-align: right;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    width: auto;
+    min-width: 80px;
+}
+
+/* Ocultar imágenes y checkboxes solo en la impresión */
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+
+
+/* header sea más pequeño en pantallas chicas */
+@media (max-width: 840px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: flex-start;
+    }
+
+    .iconUsuario {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 4px; 
+        width: auto;
+        height: auto;
+    }
+
+    header h2 {
+        font-size: 18px;
+        margin-top: 60px; 
+        margin-left: 10px;
+    }
+
+    .iconMsj, .iconNot {
+        font-size: 10px; 
+        margin: 3px;
+    }
+
+    .fotoPerfil {
+        width: 25px; 
+        height: 25px;
+        margin-left: 5px;
+    }
+
+    .perfilUser span {
+        font-size: 10px; 
+    }
+    
+    .avatar {
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin: 10px;
+    }
+
+   
+
+}

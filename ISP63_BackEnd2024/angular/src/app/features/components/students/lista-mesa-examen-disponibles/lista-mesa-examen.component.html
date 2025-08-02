@@ -1,0 +1,131 @@
+<div class="body container-fluid">
+
+    <div class="filtros row mb-3 justify-content-center no-print">
+
+
+      
+
+        
+        <div class=" col-md-12 d-md-flex justify-content-center no-print ">
+
+
+          <div class="col-md col-12 row  justify-content-center">
+
+            <div class="col-md-6 col-10 my-3 mx-2">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Buscar" (input)="buscarMesa($event)">
+                    <a routerLink="" class="input-group-text">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md col-12 row justify-content-md-center justify-content-center">
+
+                <div class="col-md-4 col-5 mx-2 my-3">
+                    <select class="form-select" id="selectedLlamado" (change)="filtrarPorLlamado($event)">
+                        <option disabled selected hidden>Llamado</option>
+                        <option value="PRIMERO">1° Llamado</option>
+                        <option value="SEGUNDO">2° Llamado</option>
+                        <option value="UNICO">Llamado único</option>
+                    </select>
+
+                </div>
+
+
+                <div class="col-md-4 col-5 mx-2 my-3">
+                    <select class="form-select" id="selectedAnio" (change)="filtrarPorAnio($event)">
+                        <option disabled selected hidden>Año</option>
+                        <option *ngFor="let anio of aniosDisponibles" [value]="anio.value">{{ anio.label }}</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+
+       
+    </div>
+<!---
+    <div class=" col-md-12 d-md-flex justify-content-center no-print ">
+
+
+        <div class="col-md-4 col-12 row justify-content-md-start justify-content-center">
+        
+            <div class="col-md-3 col-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Buscar" (input)="buscarMesa($event)">
+                    <a routerLink="" class="input-group-text">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md col-12 row justify-content-md-end justify-content-center">
+
+         Filtro de llamados 
+        <div class="col-md-2">
+            <select class="form-select" id="selectedLlamado" (change)="filtrarPorLlamado($event)">
+                <option disabled selected hidden>Llamado</option>
+                <option value="PRIMERO">1° Llamado</option>
+                <option value="SEGUNDO">2° Llamado</option>
+                <option value="UNICO">Llamado único</option>
+            </select>
+        </div>
+
+    
+
+        <div class="col-md-2">
+            <select class="form-select" id="selectedAnio" (change)="filtrarPorAnio($event)">
+                <option disabled selected hidden>Año</option>
+                <option *ngFor="let anio of aniosDisponibles" [value]="anio.value">{{ anio.label }}</option>
+            </select>
+        </div>
+        
+    </div>
+-->
+
+
+  
+<br>
+
+
+
+
+
+<div class="cards row ">
+    <div *ngIf="mesasFiltradas.length === 0" class="text-center my-3">
+        <br>
+        <p>No hay mesas disponibles</p>
+        <br>
+      </div>
+      
+      
+    @for (mesa of mesasFiltradas; track $index) {
+        <div class="card m-3" style="max-width: 380px;" [class]="getCardClass(mesa.idCarrera)">
+        <div class="side-highlight"></div>
+            <div class="row g-0 ">
+                <div class="card-header col-md-12">      
+                    <h4 class="card-title m-2">{{ mesa.asignatura }}</h4>
+                    <p>{{mesa.anio}}° Año - {{ mesa.carrera }}</p>
+                </div>
+                <div class="col-md-12">
+                    <div class="card-body">
+                        <div class="card-date">  
+                            <p class="mx-3 text-center">  <i class="bi bi-calendar4"></i> {{mesa.llamado}} Llamado {{mesa.fechayHora}}</p>
+                        </div>
+                            <p class="mx-3"><b>Tribunal:</b> {{mesa.tribunal}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+
+</div>
+</div>

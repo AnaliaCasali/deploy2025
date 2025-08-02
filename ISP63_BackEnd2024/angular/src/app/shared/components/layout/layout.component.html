@@ -1,0 +1,41 @@
+<div class="min-h-screen bg-gray-50/50">
+  <div *ngIf="rol === 'ADMIN'">
+    <app-admin-sidebar></app-admin-sidebar>
+  </div>
+   <div *ngIf="rol === 'ESTUDIANTE'">
+    <app-estudiante-sidebar></app-estudiante-sidebar>
+  </div>
+  <div *ngIf="rol === 'DOCENTE'">
+    <app-docente-sidebar></app-docente-sidebar>
+  </div>
+<div class="p-4 xl:ml-80">
+    <app-header></app-header>
+    <div class="mt-12">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="text-blue-gray-600">
+        <app-footer></app-footer>
+    </div>
+  </div>
+</div>
+  <!--
+  <div *ngIf="rol === 'USER'">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div *ngIf="userRole === 'JEFE_SECCION'">
+    <app-jefe-seccion-sidebar></app-jefe-seccion-sidebar>
+  </div>
+  <div *ngIf="userRole === 'DOCENTE'">
+    <app-docente-sidebar></app-docente-sidebar>
+  </div>
+  <div *ngIf="userRole === 'SECRETARIA'">
+    <app-secretaria-sidebar></app-secretaria-sidebar>
+  </div>
+  <div *ngIf="userRole === 'DIRECTOR'">
+    <app-director-sidebar></app-director-sidebar>
+  </div>
+  <div *ngIf="userRole === 'WEBADMIN'">
+    <app-webadmin-sidebar></app-webadmin-sidebar>
+  </div>
+  -->

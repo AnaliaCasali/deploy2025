@@ -1,0 +1,141 @@
+<!--Panel el alumno-->
+<main class="container mt-0 pt-0">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-2">Panel del alumno</a>
+            <form class="d-flex" role="search">
+                <button class="btn btn-outline-success" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+                <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
+            </form>
+        </div>
+    </nav>
+    <!-- Sección de Inscripciones -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-3 mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6>Inscripción a Cursado</h6>
+                        </div>
+                        <button class="btn btn-primary rounded-circle">+</button>
+                    </div>
+                </div>
+                <div class="card p-3 mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6>Inscripción a Examen</h6>
+                        </div>
+                        <button class="btn btn-primary rounded-circle">+</button>
+                    </div>
+                </div>
+                <div class="card p-3 mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6>Inscripción a Mesa Esp.</h6>
+                        </div>
+                        <button class="btn btn-primary rounded-circle">+</button>
+                    </div>
+                </div>
+                <div class="card p-3 mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6>Inscripción a Movilidad</h6>
+                        </div>
+                        <button class="btn btn-primary rounded-circle">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3 text-center">
+                    <h5>Calendario</h5>
+                    <iframe
+                        src="https://calendar.google.com/calendar/embed?src=f4b4cbfdeb644eb72c25c313a74253c0768c769a3cff0fe6946944c2816d4518%40group.calendar.google.com&ctz=UTC"
+                        style="border: 0" height="350" frameborder="0" scrolling="no">
+                    </iframe>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <!--Tarjetas-->
+    <div id="cardCarousel" class="carousel slide py-4" data-bs-ride="carousel">
+        <!-- Botones izquierdo y derecho -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+    
+        <button class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    
+        <div class="carousel-inner">
+            <!-- Primera tarjeta -->
+            <div class="carousel-item d-flex justify-content-center">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="card-header col-md-4">
+                            <img src="" alt="Profile Image" class="profile-img">
+                            <h4 class="card-title">BASE DE DATOS</h4>
+                            <p>Tecnicatura Sup. en Desarrollo de Software</p>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <i class="bi bi-calendar4"></i>
+                                <p>20/07/2024</p>
+                                <i class="fi fi-rr-clock-three"></i>
+                                <p>09:00 - 10:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Segunda tarjeta -->
+            <div class="carousel-item d-flex justify-content-center">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="card-header col-md-4">
+                            <img src="" alt="Profile Image" class="profile-img">
+                            <h4 class="card-title">BASE DE DATOS</h4>
+                            <p>Tecnicatura Sup. en Desarrollo de Software</p>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <i class="bi bi-calendar4"></i>
+                                <p>20/07/2024</p>
+                                <i class="fi fi-rr-clock-three"></i>
+                                <p>09:00 - 10:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Tercera tarjeta -->
+            <div class="carousel-item active d-flex justify-content-center">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="card-header col-md-4">
+                            <img src="" alt="Profile Image" class="profile-img">
+                            <h4 class="card-title">DERECHO</h4>
+                            <p>Tecnicatura Sup. en Desarrollo de Software</p>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <i class="bi bi-calendar4"></i>
+                                <p>20/07/2024</p>
+                                <i class="fi fi-rr-clock-three"></i>
+                                <p>09:00 - 10:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

@@ -1,0 +1,41 @@
+
+
+
+<!--GRUPO DE CARDS-->
+
+
+<div class="overflow-x-auto whitespace-nowrap">
+
+
+  <!---nueva card-->
+  <div *ngFor="let carrera of carreras"  class="relative inline-block   h-auto sm:w-1/2 md:w-1/3 p-2 ">
+    <div class=" border-l-8  border-orange-500  flex flex-col md:flex-row items-start bg-white border-r-1 border-r-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+
+      <div class="flex flex-col overflow-x-auto  justify-between p-4 leading-normal flex-grow h-full max-h-64"> <!-- Ajusta max-h según sea necesario -->
+        <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+          {{asignatura}}</h5>
+        <div class="overflow-hidden">
+          <p id="texto" class="text-sm line-clamp: 2 mb-3 font-light text-gray-700 dark:text-gray-400" style="font-size: 14px; line-height: 1.5;">
+            {{carrera.carrera}}
+          </p>
+        </div>
+
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-6 h-6 -mt-4 text-orange-500">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+          </svg>
+          <span class="ml-2 mb-3 font-light text-gray-700 dark:text-gray-400 align-middle">
+            Fecha: {{fechaExamen}}</span>
+        </div>
+        <span class="-mt-3  font-light text-gray-700 dark:text-gray-400">
+          Tribunal:</span>
+          <p class="overflow-hidden  font-light text-gray-700 dark:text-gray-400">
+            {{tribunal}}</p>
+        </div>
+      <button class="absolute bottom-16 right-5 mb-2 mr-2 w-10 h-10 rounded-full bg-white shadow">
+        <img class="w-full h-full rounded-full"
+        [src]="carrera.logo.url" [alt]="carrera.logo.alt"  >
+      </button>
+    </div>
+</div>
+

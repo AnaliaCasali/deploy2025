@@ -1,0 +1,71 @@
+<div class="container mx-auto px-4" style="position: relative; top: -40px;">
+  <h2 class="text-2xl font-bold mb-6 text-center text-blue-800">Crear Noticia</h2>
+  <form (ngSubmit)="saveNoticia()" #noticiaForm="ngForm" class="bg-white shadow-lg rounded-lg p-6 max-w-full md:max-w-lg mx-auto space-y-6 overflow-hidden">
+
+
+    <!-- Título -->
+    <div>
+      <label for="titulo" class="block text-lg font-semibold text-gray-800">Título</label>
+      <input required type="text" [(ngModel)]="noticia.titulo" name="titulo"
+             class="mt-1 w-full border border-gray-300 rounded-md focus:ring focus:ring-blue-500 focus:border-blue-500 p-2 text-gray-800" />
+    </div>
+
+
+    <!-- Subtítulo -->
+    <div>
+      <label for="subtitulo" class="block text-lg font-semibold text-gray-800">Subtítulo</label>
+      <input required type="text" [(ngModel)]="noticia.subtitulo" name="subtitulo"
+             class="mt-1 w-full border border-gray-300 rounded-md focus:ring focus:ring-blue-500 focus:border-blue-500 p-2 text-gray-800" />
+    </div>
+
+
+    <!-- Descripción -->
+    <div>
+      <label for="descripcion" class="block text-lg font-semibold text-gray-800">Descripción</label>
+      <textarea required [(ngModel)]="noticia.descripcion" name="descripcion" rows="3"
+                class="mt-1 w-full border border-gray-300 rounded-md focus:ring focus:ring-blue-500 focus:border-blue-500 p-2 text-gray-800 resize-none"></textarea>
+    </div>
+
+
+    <!-- Fecha e Imagen -->
+    <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+      <!-- Fecha -->
+      <div class="sm:flex-1">
+        <label for="fecha" class="block text-lg font-semibold text-gray-800">Fecha</label>
+        <input id="fecha" type="date" [(ngModel)]="noticia.fecha" name="fecha" required
+               class="mt-1 w-full border border-gray-300 rounded-md focus:ring focus:ring-blue-500 focus:border-blue-500 p-2 text-gray-800" />
+      </div>
+
+
+      <!-- Logo (Imagen) -->
+      <div class="sm:flex-1">
+        <label for="logoFile" class="block text-lg font-semibold text-gray-800">Logo (Imagen)</label>
+        <input type="file" required (change)="onFileSelected($event)" name="logoFile"
+               class="mt-1 w-full border border-gray-300 rounded-md focus:ring focus:ring-blue-500 focus:border-blue-500 p-2 text-gray-800" />
+      </div>
+    </div>
+
+
+    <!-- Estado (Vigente / No Vigente) -->
+    <div>
+      <label for="vigente" class="block text-lg font-semibold text-gray-800">Estado</label>
+      <div class="mt-2 flex items-center space-x-4">
+        <label class="flex items-center text-gray-800">
+          <input type="radio" [(ngModel)]="noticia.vigente" name="vigente" [value]="true" class="focus:ring focus:ring-blue-500 focus:border-blue-500" />
+          <span class="ml-2">Vigente</span>
+        </label>
+        <label class="flex items-center text-gray-800">
+          <input type="radio" [(ngModel)]="noticia.vigente" name="vigente" [value]="false" class="focus:ring focus:ring-blue-500 focus:border-blue-500" />
+          <span class="ml-2">No Vigente</span>
+        </label>
+      </div>
+    </div>
+
+
+    <!-- Botón Guardar -->
+    <button type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-md transition duration-300">
+      Guardar
+    </button>
+  </form>
+</div>

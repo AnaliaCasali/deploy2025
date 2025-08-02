@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+
+}
+
+.espacio {
+    padding: 10px;
+
+    width: 100%;
+    background-color: white;
+    display: block;
+   
+    }
+
+/*pantalla dividida*/
+.logo_derecha {
+    background: url(https://th.bing.com/th/id/R.294f423a944a71dc58aedcb1a0c9a03e?rik=zcf5HgR9XM%2bH6Q&riu=http%3a%2f%2fapp.regional11.gob.do%2freg11%2fpublic%2fassets%2fimg%2fniveles%2feducacion_primaria.jpg&ehk=5LvT%2f4rE4wdc6JV7Oyzz%2f2Q8CJmJXQ9j%2fDusDQxngqc%3d&risl=&pid=ImgRaw&r=0);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height:  88.7vh;
+}
+
+.descripcion_izquierda {
+    background: linear-gradient(180deg, #4a89c7 0%, #003366 100%);
+    height:  88.7vh;
+    width: 50%;
+}
+
+.contenido {
+    display: flex;
+    text-align: center;
+}
+
+.descripcion_izquierda .titulo h1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    font-size: 50px;
+    font-weight: 600;
+    
+    
+
+
+}
+
+.descripcion_izquierda .titulo h2 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 1px;
+    font-size: 40px;
+    font-weight: 600;
+    
+    
+}
+
+.descripcion_izquierda .descripcion-carrera ul li {
+    text-decoration: none;
+    font-size: 20px;
+    
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    
+
+    color: white;
+}
+
+.descripcion_izquierda .descripcion-carrera ul li span {
+    font-weight: 700;
+}
+
+
+/*FIN pantalla dividida*/
+
+
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    padding: 10px;
+}
+
+@media(max-width:400px) {
+   li {
+        font-size:2vw+1rem;
+    }
+    h2{
+        font-size:2vw+1rem;
+    }
+    .descripcion_izquierda .titulo h1{
+        font-size: 10px;
+    }
+}
+
+@media(max-width:412px) {
+    .logo_derecha{
+       
+    }
+    .descripcion_izquierda{
+
+    }
+}

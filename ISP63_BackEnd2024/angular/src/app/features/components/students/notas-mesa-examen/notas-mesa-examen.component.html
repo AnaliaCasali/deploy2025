@@ -1,0 +1,18 @@
+<div class="container mx-auto py-8"    class="bg-white shadow-md rounded-lg p-6 my-5">
+    <h2 class="text-xl font-semibold mb-4">Notas de Mesas de Examen:</h2>
+   
+    <div *ngFor="let notas of infoNotas; let i = index" class="bg-white shadow-md rounded-lg p-6 my-5"   
+    [ngClass]="{
+        'borde-rojo': notas.nota < 6,
+        'borde-verde': notas.nota >= 6,
+        'borde-negro': notas.nota == null || notas.nota === undefined
+      }">
+        <p class="text-lg"><strong>Asignatura:</strong> {{notas.idAsignatura}}</p>
+        <p class="text-lg"><strong>Llamado:</strong> {{notas.llamado}}</p>
+        <p class="text-lg"><strong>Fecha:</strong> {{notas.fecha}}</p>
+        <p class="text-lg"><strong>Nota:</strong> {{ notas.nota ? notas.nota : 'Calificación pendiente' }}</p>
+
+    </div> 
+   
+ 
+</div>

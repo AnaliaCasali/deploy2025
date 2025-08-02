@@ -1,0 +1,99 @@
+<div>
+  <header class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="ml-5">Inscripción a Carreras</h2>
+    <div class="iconUsuario d-flex align-items-center">
+      <a routerLink="" class="iconNot"><i class="fas fa-bell fa-1x mx-2"></i></a>
+      <a routerLink="" class="iconMsj"><i class="fas fa-envelope fa-1x mx-2"></i></a>
+      <a routerLink="" class="perfilUser d-flex">
+        <span>Nombre<br><small>Tipo Usuario</small></span>
+        <img class="fotoPerfil" src="https://cdn.pixabay.com/photo/2020/06/21/09/48/hill-5324149_640.jpg" alt="imagen alumno">
+      </a>
+    </div>
+  </header>
+
+  <!-- Formulario de Datos Personales -->
+  <div *ngIf="!isForm2Visible" class="form-wrapper mb-5">
+    <div class="form-container">
+      <h4>Datos Personales</h4>
+      <form [formGroup]="alumnoForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+          <div class="col mx-3">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="txtname" placeholder="Ingrese su nombre" formControlName="nombre" />
+          </div>
+          <div class="col">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="txtapellido" placeholder="Ingrese su apellido" formControlName="apellido" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col  mx-3">
+            <label for="dni">DNI</label>
+            <input type="text" id="dni" name="dni" placeholder="Ingrese su DNI" formControlName="dni" />
+          </div>
+          <div class="col">
+            <label for="fechaNacimiento">Fecha de nacimiento</label>
+            <input type="text" name="txtfechNacim" id="fechaNacimiento" placeholder="dd/mm/aaaa" formControlName="fechaNacimiento" />
+          </div>
+        </div>
+
+        <div class="col m-3">
+          <label for="domicilio">Domicilio</label>
+          <input type="text" id="domicilio" placeholder="Ingrese su domicilio" formControlName="domicilio" />
+        </div>
+
+        <div class="col m-3">
+          <label for="telefono">Teléfono</label>
+          <input type="text" id="telefono" name="txttelef" placeholder="Ingrese su teléfono" formControlName="telefono" />
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="btn-cancel" (click)="onCancel()">CANCELAR</button>
+          <button type="submit" class="btn-accept" [disabled]="alumnoForm.invalid" (click)="showNextForm()">SIGUIENTE</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Formulario de Datos Académicos -->
+  <div *ngIf="isForm2Visible" class="form-wrapper">
+    <div class="form-container">
+      <h4>Datos Académicos</h4>
+
+      <form [formGroup]="academicoForm" (ngSubmit)="onSubmit()">
+
+        <div class="col m-3">
+          <label for="carreras">Seleccione una Carrera</label>
+          <select name="carreras" id="carreras" formControlName="carreras">
+            <option value="0" selected hidden>Seleccione una Carrera</option>
+            <option *ngFor="let carrera of carreras" [value]="carrera.id">{{ carrera.carrera }}</option>
+          </select>
+        </div>
+
+        <div class="col m-3">
+          <label for="ttlSec">Título secundario o constancia de título en trámite</label>
+          <input type="file" id="ttlSec" name="" formControlName="ttlSec" (change)="onFileSelected($event)">
+        </div>
+
+        <div class="col m-3">
+          <label for="estFonAud">Estudio de Fonoaudilogía</label>
+          <input type="file" id="estFonAud" name="" formControlName="estFonAud" (change)="onFileSelected($event)">
+        </div>
+        <div class="col m-3">
+          <label for="constVecindad">Constancia de vecindad. (Domicilio)</label>
+          <input type="file" id="constVecindad" name="" formControlName="foto4x4" (change)="onFileSelected($event)">
+        </div>
+        <div class="col m-3">
+          <label for="partNac">Partida de nacimiento</label>
+          <input type="file" id="partNac" name="" formControlName="partNac" (change)="onFileSelected($event)">
+        </div>
+        <div class="buttons">
+          <button type="button" class="btn-cancel" (click)="showPreviousForm()">ANTERIOR</button>
+          <button type="submit" class="btn-accept" [disabled]="academicoForm.invalid">ACEPTAR</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

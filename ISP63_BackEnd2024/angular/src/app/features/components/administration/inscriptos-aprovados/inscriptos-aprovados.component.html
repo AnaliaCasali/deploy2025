@@ -1,0 +1,106 @@
+<div class="body container-fluid ">
+
+
+    <div class="filtros row mb-3 justify-content-end no-print">
+    
+     
+    
+      <!-- Botón para mostrar filtros en pantallas pequeñas
+      <div class="col-2 d-flex d-md-none justify-content-end no-print">
+          <button class="btn btn-primary" (click)="toggleFilters()">
+              <i class="fa-solid fa-sliders" style="color: #000000;"></i>
+          </button>
+      </div> -->
+    
+      <!-- Filtros para pantallas medianas y grandes -->
+      <div class=" col-md-9 d-md-flex justify-content-end no-print ">
+    
+    
+              <!-- filtro de llamados -->
+              <div class="mx-2 my-2 no-print">
+                  <select class="form-select" id="selectLlamado" (change)="filtrarPorLlamado($event)">
+                    <option  disabled selected hidden>Llamado</option>
+                    <option value="PRIMERO">1° Llamado</option>
+                    <option value="SEGUNDO">2° Llamado</option>
+                    <option value="UNICO">Llamado único</option>
+                  </select>
+              </div>
+    
+    
+          <div class="col-md-3 mx-2 my-2 no-print">
+              <select class="form-select auto " id="selectCarrera" (change)="filtrarPorCarrera($event)">
+                  <option disabled selected hidden>Carrera</option>
+                  <option *ngFor="let carrera of carreras" [value]="carrera.id">
+                    {{ carrera.carrera}}
+                  </option>
+              </select>
+          </div>
+    
+          <div class="col-md-2 mx-2 my-2 no-print">
+              <select class="form-select auto m" id="selectAño" (change)="filtrarPorAnio($event)">
+                  <option disabled selected hidden>Año</option>
+                  <option *ngFor="let anio of aniosDisponibles" [value]="anio.value">{{ anio.label }}</option>
+    
+              </select>
+          </div>
+    
+          <div class="no-print mx-2 my-2">
+              <select class="form-select" id="selectAsignatura" (change)="filtrarPorAsignatura($event)">
+                  <option disabled selected hidden>Asignatura</option>
+                  <option *ngFor="let materia of materias" [value]="materia.nombre">{{ materia.nombre }}</option>
+                  <option *ngIf="materias.length === 0">Seleccione una Carrera y Año</option>
+              </select>
+          </div>
+    
+    
+      </div>
+      </div>
+    
+    
+    
+    <div class="table-responsive mt-6">
+        <table id="tablaAlumNotas" class="table table-hover text-center align-middle">
+          <thead>
+            <tr>
+              <th colspan="5" class="table-title text-center">
+           INSCRIPTOS A MESAS DE EXAMEN
+              </th>
+            </tr>
+            <tr>
+              <th>Nombre y Apellido</th>
+              <th>DNI</th>
+              <th>Carrera</th>
+              <th>Materia</th>
+              <th>Llamado</th>
+              
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="filteredInscripMesas.length === 0">
+              <td colspan="5" class="text-center">No hay inscriptos</td>
+            </tr>
+            <ng-container *ngFor="let alumno of filteredInscripMesas; let i = index">
+              <tr>
+                <td>{{ alumno.nombreApellido }}</td>
+                <td>{{ alumno.dni }}</td>
+                <td>{{alumno.carrera}}</td>
+                <td>{{ alumno.materia }}</td>
+                <td>{{ alumno.turnoLlamado }}</td>
+                
+           
+              </tr>
+            </ng-container>
+            <tr>
+              <td colspan="5" class="text-end no-print">
+                <div class="d-inline-flex">
+                  <button class="btn btn-primary btn-sm mx-5"   (click)="enviarDatos()" 
+                  >Imprimir Acta <i class="fa-solid fa-file-pdf ml-2"></i></button>
+                                 
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>

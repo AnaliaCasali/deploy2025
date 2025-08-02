@@ -1,0 +1,421 @@
+
+<!--////TABS//////////////////////--->
+<div class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
+  <ul class="flex justify-center -mb-px">
+    <li id="primero" class="mr-2">
+      <a href="javascript:void(0)"  (click)="setActiveTab('primero')" [ngClass]="{'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500': activeTab === 'primero'}" class="inline-block px-4 py-2 rounded-t-lg">1º Año</a>
+    </li>
+    <li id="segundo" class="mr-2">
+      <a href="javascript:void(0)"  (click)="setActiveTab('segundo')" [ngClass]="{'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500': activeTab === 'segundo'}" class="inline-block px-4 py-2 rounded-t-lg">2º Año</a>
+    </li>
+    <li id="tercero" class="mr-2">
+      <a href="javascript:void(0)"  (click)="setActiveTab('tercero')" [ngClass]="{'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500': activeTab === 'tercero'}" class="inline-block px-4 py-2 rounded-t-lg">3º Año</a>
+    </li>
+    <li id="cuarto" class="mr-2">
+      <a href="javascript:void(0)"  (click)="setActiveTab('cuarto')" [ngClass]="{'text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500': activeTab === 'cuarto'}" class="inline-block px-4 py-2 rounded-t-lg">4º Año</a>
+    </li>
+  </ul>
+
+</div>
+
+<!-- Contenido de tabs -->
+<div *ngIf="activeTab === 'primero'">
+  <h1 class="flex font-bold justify-center text-4xl mt-4">Plan de Estudios –  1°</h1>
+  <!-- Tabla del 1º Año -->
+
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <!-- Código de la tabla para 1º Año -->
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
+              <tr>
+                  <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                      <p class="title">Unidad curricular</p>
+                  </th>
+                  <th class="px-6 py-3">HS. CÁTEDRA SEMANALES</th>
+                  <th class="px-6 py-3">HS. CÁTEDRA ANUALES</th>
+                  <th class="px-6 py-3">FORMATO CURRICULAR</th>
+              </tr>
+              <tr>
+                  <td colspan="4" class="px-6 py-3 bg-gray-100 dark:bg-gray-700 font-semibold text-gray-700 dark:text-gray-300">
+                      CAMPO DE LA FORMACIÓN GENERAL
+                  </td>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="px-6 py-4 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-gray-800">PEDAGOGÍA</td>
+                  <td class="px-6 py-4">3</td>
+                  <td class="px-6 py-4">96</td>
+                  <td class="px-6 py-4">MATERIA</td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="px-6 py-4 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-gray-800">
+                      UCCV: MOVIMIENTOS ARTÍSTICOS <br> Y PROYECTOS CULTURALES
+                  </td>
+                  <td class="px-6 py-4">3</td>
+                  <td class="px-6 py-4">96</td>
+                  <td class="px-6 py-4">SEMINARIO</td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td colspan="4" class="px-6 py-3 bg-gray-100 dark:bg-gray-700 font-semibold text-gray-700 dark:text-gray-300">
+                      CAMPO DE LA FORMACIÓN ESPECÍFICA
+                  </td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="px-6 py-4 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-gray-800">LENGUA ESPAÑOLA I</td>
+                  <td class="px-6 py-4">4</td>
+                  <td class="px-6 py-4">128</td>
+                  <td class="px-6 py-4">MATERIA</td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="px-6 py-4 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-gray-800">LINGÜÍSTICA GENERAL</td>
+                  <td class="px-6 py-4">4</td>
+                  <td class="px-6 py-4">128</td>
+                  <td class="px-6 py-4">MATERIA</td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="px-6 py-4 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-gray-800">ITINERARIO POR LA LITERATURA ARGENTINA I</td>
+                  <td class="px-6 py-4">4</td>
+                  <td class="px-6 py-4">128</td>
+                  <td class="px-6 py-4">MATERIA</td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="px-6 py-4 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-gray-800">LITERATURAS ANTIGUAS</td>
+                  <td class="px-6 py-4">4</td>
+                  <td class="px-6 py-4">128</td>
+                  <td class="px-6 py-4">MATERIA</td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="px-6 py-4 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-gray-800">LECTURAS CRÍTICAS I</td>
+                  <td class="px-6 py-4">4</td>
+                  <td class="px-6 py-4">128</td>
+                  <td class="px-6 py-4">MATERIA</td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="px-6 py-4 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-gray-800">PRODUCCIÓN ORAL Y ESCRITA</td>
+                  <td class="px-6 py-4">4</td>
+                  <td class="px-6 py-4">128</td>
+                  <td class="px-6 py-4">TALLER</td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td colspan="4" class="px-6 py-3 bg-gray-100 dark:bg-gray-700 font-semibold text-gray-700 dark:text-gray-300">
+                      CAMPO DE LA FORMACIÓN EN LA PRÁCTICA PROFESIONAL
+                  </td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="px-6 py-4 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-gray-800">
+                      PRÁCTICA DOCENTE I: ESCENARIOS EDUCATIVOS
+                  </td>
+                  <td class="px-6 py-4">3</td>
+                  <td class="px-6 py-4">96</td>
+                  <td class="px-6 py-4">TALLER</td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td class="px-6 py-4 font-medium text-gray-900 bg-gray-50 dark:text-white dark:bg-gray-800">UDI</td>
+                  <td class="px-6 py-4">3</td>
+                  <td class="px-6 py-4">96</td>
+                  <td class="px-6 py-4">SEMINARIO</td>
+              </tr>
+
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                  <td colspan="2" class="px-6 py-4 font-semibold">TOTAL:</td>
+                  <td class="px-6 py-4 font-semibold">TOTAL: 1120</td>
+                  <td class="px-6 py-4 font-semibold">TOTAL: 35</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+  </div>
+</div>
+
+<div *ngIf="activeTab === 'segundo'">
+  <h1 class="flex font-bold justify-center text-4xl mt-4">Plan de Estudios –  2°</h1>
+  <!-- Tabla del 2º Año -->
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <!-- Código de la tabla para 2º Año -->
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
+        <tr class="border-b border-gray-200 dark:border-gray-750">
+          <th scope="col" class="px-6 py-3">UNIDAD CURRICULAR</th>
+          <th class="px-6 py-3">HS. CÁTEDRA SEMANALES</th>
+          <th class="px-6 py-3">HS. CÁTEDRA ANUALES</th>
+          <th class="px-6 py-3">FORMATO CURRICULAR</th>
+        </tr>
+        <tr class="border-b border-gray-200 dark:border-gray-750">
+          <td colspan="4" class="px-6 py-3 font-bold text-gray-900 dark:text-white">CAMPO DE LA FORMACIÓN GENERAL</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-gray-200 dark:border-gray-750">
+          <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:bg-gray-800 dark:text-white">
+            INSTITUCIONES EDUCATIVAS
+          </td>
+          <td class="px-6 py-4">3</td>
+          <td class="px-6 py-4">96</td>
+          <td class="px-6 py-4">MATERIA</td>
+        </tr>
+        <tr class="border-b border-gray-200 dark:border-gray-750">
+          <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:bg-gray-800 dark:text-white">
+            DIDÁCTICA Y CURRICULUM
+          </td>
+          <td class="px-6 py-4">4</td>
+          <td class="px-6 py-4">128</td>
+          <td class="px-6 py-4">MATERIA</td>
+        </tr>
+        <!-- Resto de filas aquí -->
+        <tr class="border-b border-gray-200 dark:border-gray-750">
+          <td colspan="4" class="px-6 py-3 font-bold text-gray-900 dark:text-white">CAMPO DE LA FORMACIÓN ESPECÍFICA</td>
+        </tr>
+        <tr class="border-b border-gray-200 dark:border-gray-750">
+          <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:bg-gray-800 dark:text-white">
+            LATÍN
+          </td>
+          <td class="px-6 py-4">4</td>
+          <td class="px-6 py-4">128</td>
+          <td class="px-6 py-4">MATERIA</td>
+        </tr>
+        <tr class="border-b border-gray-200 dark:border-gray-750">
+          <td colspan="4" class="px-6 py-3 font-bold text-gray-900 dark:text-white">CAMPO DE LA FORMACIÓN EN LA PRÁCTICA PROFESIONAL</td>
+        </tr>
+        <tr class="border-b border-gray-200 dark:border-gray-750">
+          <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:bg-gray-800 dark:text-white">
+            UCO
+          </td>
+          <td class="px-6 py-4">3</td>
+          <td class="px-6 py-4">96</td>
+          <td class="px-6 py-4">SEMINARIO</td>
+        </tr>
+        <tr class="border-b border-gray-200 dark:border-gray-750">
+          <td colspan="2" class="px-6 py-3 font-bold text-gray-900 dark:text-white">TOTAL:</td>
+          <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">TOTAL: 1120</td>
+          <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">TOTAL: 35</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<div *ngIf="activeTab === 'tercero'">
+  <h1 class="flex font-bold justify-center text-4xl mt-4">Plan de Estudios –  3°</h1>
+  <!-- Tabla del 3º Año -->
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <!-- Código de la tabla para 3º Año -->
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+          <tr class="header border-b border-gray-200 dark:border-gray-750">
+              <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">UNIDAD CURRICULAR</th>
+              <th>HS. CÁTEDRA SEMANALES</th>
+              <th>HS. CÁTEDRA ANUALES</th>
+              <th>FORMATO CURRICULAR</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td colspan="4"><strong>CAMPO DE LA FORMACIÓN GENERAL</strong></td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">UCCV: ALFABETIZACIÓN</td>
+              <td>3</td>
+              <td>96</td>
+              <td>MATERIA</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">FILOSOFÍA</td>
+              <td>3</td>
+              <td>96</td>
+              <td>MATERIA</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">HISTORIA Y POLÍTICA DE LA EDUCACIÓN ARGENTINA</td>
+              <td>3</td>
+              <td>96</td>
+              <td>MATERIA</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td colspan="4"><strong>CAMPO DE LA FORMACIÓN ESPECÍFICA</strong></td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">SUJETOS DE LA EDUCACIÓN SECUNDARIA</td>
+              <td>4</td>
+              <td>128</td>
+              <td>MATERIA</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">LINGÜÍSTICA DEL TEXTO Y ANÁLISIS DEL DISCURSO II</td>
+              <td>4</td>
+              <td>128</td>
+              <td>MATERIA</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">DIDÁCTICA DE LA LENGUA Y LA LITERATURA I</td>
+              <td>3</td>
+              <td>96</td>
+              <td>TALLER</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">ITINERARIO POR LA LITERATURA LATINOAMERICANA I</td>
+              <td>4</td>
+              <td>128</td>
+              <td>MATERIA</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">LITERATURAS MODERNAS I</td>
+              <td>4</td>
+              <td>128</td>
+              <td>MATERIA</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">LECTURAS CRÍTICAS II</td>
+              <td>4</td>
+              <td>128</td>
+              <td>MATERIA</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th colspan="4">CAMPO DE LA FORMACIÓN EN LA PRÁCTICA PROFESIONAL</th>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-10 py-4 font-small text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">PRÁCTICA DOCENTE III: LA CLASE, LOS PROCESOS DEL APRENDER Y DEL ENSEÑAR</td>
+              <td>4</td>
+              <td>128</td>
+              <td>TALLER INTEGRADOR</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td>TOTAL: 36</td>
+              <td colspan="2">TOTAL: 1152</td>
+          </tr>
+      </tbody>
+  </table>
+
+  </div>
+</div>
+
+
+<div *ngIf="activeTab === 'cuarto'">
+  <h1 class="flex font-bold justify-center text-4xl mt-4">Plan de Estudios –  4°</h1>
+  <!-- Tabla del 4º Año -->
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <!-- Código de la tabla para 4º Año -->
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <th scope="col" class="px-6 py-3">UNIDAD CURRICULAR</th>
+              <th scope="col" class="px-6 py-3">HS. CÁTEDRA SEMANALES</th>
+              <th scope="col" class="px-6 py-3">HS. CÁTEDRA ANUALES</th>
+              <th scope="col" class="px-6 py-3">FORMATO CURRICULAR</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td colspan="4" class="px-6 py-3 font-bold text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-800">CAMPO DE LA FORMACIÓN GENERAL</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">ÉTICA Y TRABAJO DOCENTE</td>
+              <td class="px-6 py-4">3</td>
+              <td class="px-6 py-4">96</td>
+              <td class="px-6 py-4">MATERIA</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">EDUCACIÓN SEXUAL INTEGRAL (ESI)</td>
+              <td class="px-6 py-4">3</td>
+              <td class="px-6 py-4">96</td>
+              <td class="px-6 py-4">SEMINARIO</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">METODOLOGÍA Y PRÁCTICAS DE INVESTIGACIÓN</td>
+              <td class="px-6 py-4">3</td>
+              <td class="px-6 py-4">96</td>
+              <td class="px-6 py-4">TALLER</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td colspan="4" class="px-6 py-3 font-bold text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-800">CAMPO DE LA FORMACIÓN ESPECÍFICA</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">MODELOS TEÓRICOS</td>
+              <td class="px-6 py-4">3</td>
+              <td class="px-6 py-4">96</td>
+              <td class="px-6 py-4">MATERIA</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">LINGUISTICA</td>
+              <td class="px-6 py-4">--</td>
+              <td class="px-6 py-4">--</td>
+              <td class="px-6 py-4">--</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">SEMIÓTICA</td>
+              <td class="px-6 py-4">3</td>
+              <td class="px-6 py-4">96</td>
+              <td class="px-6 py-4">MATERIA</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">CAMBIO Y VARIEDADES LINGÜÍSTICAS</td>
+              <td class="px-6 py-4">3</td>
+              <td class="px-6 py-4">96</td>
+              <td class="px-6 py-4">MATERIA</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">DIDÁCTICA DE LA LENGUA Y LA LITERATURA II</td>
+              <td class="px-6 py-4">3</td>
+              <td class="px-6 py-4">96</td>
+              <td class="px-6 py-4">TALLER</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">ITINERARIO POR LA LITERATURA LATINOAMERICANA II</td>
+              <td class="px-6 py-4">3</td>
+              <td class="px-6 py-4">96</td>
+              <td class="px-6 py-4">MATERIA</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">LITERATURAS CONTEMPORÁNEAS</td>
+              <td class="px-6 py-4">5</td>
+              <td class="px-6 py-4">160</td>
+              <td class="px-6 py-4">MATERIA</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td colspan="4" class="px-6 py-3 font-bold text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-800">CAMPO DE LA FORMACIÓN EN LA PRÁCTICA PROFESIONAL</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">PRÁCTICA DOCENTE IV: RESIDENCIA: EL ROL DOCENTE Y SU PRÁCTICA</td>
+              <td class="px-6 py-4">6</td>
+              <td class="px-6 py-4">192</td>
+              <td class="px-6 py-4">TALLER</td>
+          </tr>
+
+          <tr class="border-b border-gray-200 dark:border-gray-750">
+              <td class="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white font-bold">TOTAL:</td>
+              <td class="px-6 py-4 font-bold">TOTAL: 35</td>
+              <td class="px-6 py-4 font-bold">TOTAL: 1120</td>
+              <td class="px-6 py-4">--</td>
+          </tr>
+      </tbody>
+  </table>
+
+  </div>
+</div>

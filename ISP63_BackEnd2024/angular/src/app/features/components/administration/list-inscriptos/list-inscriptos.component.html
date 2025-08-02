@@ -1,0 +1,223 @@
+<div class="body container-fluid ">
+
+    <header class="seccionPerfil d-flex justify-content-between align-items-center mb-3 no-print">
+        
+       <!--- <div class="iconUsuario d-flex align-items-center no-print">
+<h2>Alumnos Inscriptos a Mesa de Exámen</h2>
+            <a routerLink="" class="iconNot no-print"><i class=" fas fa-bell fa-1x mx-2"></i></a>
+            <a routerLink="" class="iconMsj no-print"><i class=" fas fa-envelope fa-1x mx-2"></i></a>
+
+            <a routerLink="" class="perfilUser d-flex no-print">
+                <span class="no-print">Nombre<br><small>Tipo Usuario</small></span>
+                <img class="fotoPerfil no-print" src="https://cdn.pixabay.com/photo/2020/06/21/09/48/hill-5324149_640.jpg"
+                alt="imagen alumno">
+            </a>
+        </div>-->
+    </header>
+
+
+
+    <div class="filtros row mb-3 justify-content-end no-print">
+
+        <div class="col-md-3 col-10">
+            <div class="input-group d-flex">
+                <input type="text" class="form-control" placeholder="Buscar" (input)="buscarAlumno($event)">
+                <a routerLink="" class="iconBusc input-group-text">
+                    <span><i class="fas fa-search"></i></span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Botón para mostrar filtros en pantallas pequeñas -->
+        <div class="col-2 d-flex d-md-none justify-content-end no-print">
+            <button class="btn btnfiltros" (click)="toggleFilters()">
+                <i class="fa-solid fa-sliders" style="color: #000000;"></i>
+            </button>
+        </div>
+
+        <!-- Filtros para pantallas medianas y grandes -->
+        <div class="d-none col-md-9 d-md-flex justify-content-end no-print ">
+
+                <div class=" mx-2 no-print">
+                  <select class="form-select auto m" id="selectAño" (change)="filtrarPorEstado($event)">
+                      <option disabled hidden>Estado</option>
+                      <option value="APROBADO">Aprobado</option>
+                      <option value="RECHAZADO">Rechazado</option>
+                      <option selected value="PENDIENTE">Pendiente</option>
+                  </select>
+                </div>
+
+
+                <!-- filtro de llamados -->
+                <div class="mx-2 no-print">
+                    <select class="form-select" id="selectLlamado" (change)="filtrarPorLlamado($event)">
+                      <option  disabled selected hidden>Llamado</option>
+                      <option value="PRIMERO">1° Llamado</option>
+                      <option value="SEGUNDO">2° Llamado</option>
+                      <option value="UNICO">Llamado único</option>
+                    </select>
+                </div>
+
+
+            <div class="col-md-3 no-print">
+                <select class="form-select auto " id="selectCarrera" (change)="filtrarPorCarrera($event)">
+                    <option disabled selected hidden>Carrera</option>
+                    <option *ngFor="let carrera of carreras" [value]="carrera.id">
+                      {{ carrera.carrera}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-md-2 mx-2 no-print">
+                <select class="form-select auto m" id="selectAnio" (change)="filtrarPorAnio($event)">
+                    <option disabled selected hidden>Año</option>
+                    <option *ngFor="let anio of aniosDisponibles" [value]="anio.value">{{ anio.label }}</option>
+
+                </select>
+            </div>
+
+            <div class="no-print">
+                <select class="form-select" id="selectAsignatura" (change)="filtrarPorAsignatura($event)">
+                    <option disabled selected hidden>Asignatura</option>
+                    <option *ngFor="let materia of materias" [value]="materia.nombre">{{ materia.nombre }}</option>
+                    <option *ngIf="materias.length === 0">Seleccione una Carrera y Año</option>
+                </select>
+            </div>
+
+
+        </div>
+
+        <!-- Filtros para pantallas pequeñas -->
+        @if (showFilters) {
+            <div class="filters-mobile d-md-none no-print">
+
+              <div class=" no-print my-2">
+                <select class="form-select" id="selectEstado" [(ngModel)]="selectedEstado" (change)="filtrarPorEstado($event)">
+                  <option [ngValue]="null" disabled hidden *ngIf="!selectedEstado">Estado</option>
+                    <option value="APROBADO">Aprobado</option>
+                    <option value="RECHAZADO">Rechazado</option>
+                    <option selected value="PENDIENTE">Pendiente</option>
+                </select>
+              </div> 
+
+                <!-- Filtros para pantallas medianas y grandes -->
+                <div class=" no-print my-2"  >
+                  <select class="form-select" id="selectLlamado" [(ngModel)]="selectedLlamado" (change)="filtrarPorLlamado($event)">
+                    <option [ngValue]="null" disabled hidden *ngIf="!selectedLlamado">Llamado</option>
+
+                        <option value="PRIMERO">1° Llamado</option>
+                        <option value="SEGUNDO">2° Llamado</option>
+                        <option value="UNICO">Llamado único</option>
+                    </select>
+       
+                </div>
+
+
+
+                <div class=" no-print my-2">
+                  <select class="form-select" id="selectCarrera" [(ngModel)]="selectedCarrera" (change)="filtrarPorCarrera($event)">
+                    <option [ngValue]="null" disabled hidden *ngIf="!selectedCarrera">Carrera</option>
+                   
+                    <option *ngFor="let carrera of carreras" [value]="carrera.id">
+                      {{ carrera.carrera}}
+                    </option>
+                </select>
+                </div>
+
+                <div class=" no-print my-2">
+                  <select class="form-select" id="selectAnio" [(ngModel)]="selectedAnio" (change)="filtrarPorAnio($event)">
+                    <option [ngValue]="null" disabled hidden *ngIf="!selectedAnio">Año</option>
+                    <option *ngFor="let anio of aniosDisponibles" [value]="anio.value">{{ anio.label }}</option>
+
+                </select>
+                </div>
+
+                <div class="no-print my-2">
+                  <select class="form-select" id="selectAsignatura" [(ngModel)]="selectedMateria" (change)="filtrarPorAsignatura($event)">
+                    <option [ngValue]="null" disabled hidden *ngIf="!selectedMateria">Asignatura</option>                
+                   <option *ngFor="let materia of materias" [value]="materia.nombre">{{ materia.nombre }}</option>
+                    <option *ngIf="materias.length === 0">Seleccione una Carrera y Año</option>
+               
+                  </select>
+                </div>
+
+
+            </div>
+        }
+    </div>
+    <div class="table-responsive">
+        <table id="tablaAlumInsc" class="table table-hover text-center align-middle">
+          <thead>
+            <tr>
+              <th colspan="8" class="table-title text-center">
+                Alumnos Inscriptos a Mesa de Examen. Turno: {{turno}}
+              </th>
+            </tr>
+            <tr>
+              <th class="no-pdf">
+                <div class="flex flex-col items-center">
+                  <label for="accept-all" class="text-sm font-medium text-gray-900">Aprobar</label>
+                  <input type="checkbox" class="checkbox m-2 no-print" id="accept-all" (change)="todAcep($event)">
+                </div>
+              </th>
+              <th class="no-pdf">
+                <div class="flex flex-col items-center">
+                  <label for="reject-all" class="text-sm font-medium text-gray-900">Rechazar</label>
+                  <input type="checkbox" class="checkbox m-2 no-print checkbox-red" id="reject-all" (change)="todRech($event)">
+                </div>
+              </th>
+             
+              <th>Nombre</th>
+              <th>DNI</th>
+              <th>Año</th>
+              <th>Carrera</th>
+              <th>Asignatura</th>
+              <th>Fecha Inscripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="filteredInscripMesas.length === 0">
+              <td colspan="8" class="text-center">No hay inscriptos</td>
+            </tr>
+            <ng-container *ngFor="let alumno of filteredInscripMesas; let i = index">
+              <tr>
+                <td class="no-pdf">
+                  <div class="flex flex-col items-center">
+                  <input type="checkbox" class="checkbox m-2 no-print" [checked]="alumno.aceptado" (change)="aceptado(alumno, $event)">
+                  </div>
+                </td>
+                <td class="no-pdf"> 
+                  <div class="flex flex-col items-center">
+                  <input type="checkbox" class="checkbox m-2 no-print checkbox-red" [checked]="alumno.rechazado" (change)="rechazado(alumno, $event)">
+                </div>
+                </td>
+             <!---   <td class="no-pdf">
+                  <img [src]="" alt="Avatar" class="avatar m-2 ml-3 no-print">
+                </td> -->
+                <td>{{alumno.nombreApellido}}</td>
+                <td>{{alumno.dni}}</td>
+                <td>{{alumno.anio}}</td>
+                <td>{{alumno.carrera}}</td>
+                <td>{{alumno.materia}}</td>
+                <td>{{alumno.turnoLlamado}}</td>
+              </tr>
+            </ng-container>
+            <tr>
+              <td colspan="8" class="text-end no-print">
+                <div class="d-inline-flex">
+                  <button 
+                  class="btn btn-primary btn-sm mx-5" (click)="enviarDatosInsc()" >
+                  Imprimir Lista <i class="fa-solid fa-file-pdf ml-2"></i>
+                </button>
+                  
+                  <button id="AcepInsc" routerLink="" class="btn btn-success btn-sm mx-1" (click)="submitEstadoInsc()">Aceptar</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+</div>
+
+

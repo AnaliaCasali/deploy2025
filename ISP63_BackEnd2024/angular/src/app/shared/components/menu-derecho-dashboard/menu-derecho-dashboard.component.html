@@ -1,0 +1,21 @@
+
+<div  *ngFor="let item of textosYLinks"  class="  bg-white grid grid-cols-1 gap-4 h-auto rounded-lg ">
+  <button [routerLink]=" '/' + item.ruta" type="button"
+  class="p-2  inline-flex items-center justify-between w-full
+   text-sm font-medium text-gray-900 border-b-2 border-blue-800 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-800">
+    <div class="flex-grow text-left  text-blue-800">
+      <h2 class="text-lg font-bold text-blue-800">{{ item.textoLink }}</h2>
+      <h3 class="text-sm">{{rol}}</h3>
+    </div>
+    <div class="flex items-center justify-center w-8 h-8 bg-blue-800  mr-3 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+
+      </svg>
+    </div>
+  </button>
+
+</div>
+

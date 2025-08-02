@@ -1,0 +1,67 @@
+<div class="inline-flex  justify-center items-center flex-wrap rounded-md shadow-sm px-2 py-2
+  w-full m-0  bg-white" role="group">
+
+  <DIV   type="button" class="inline-flex items-center   text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white flex-1 mb-2 md:mb-0">
+    <div class="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full ">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-6 h-6 text-white">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+      </svg>
+    </div>
+    <H1 class="px-1"> LISTADO DE IMAGENES </H1>
+  </DIV>
+
+</div>
+
+<div class="overflow-x-auto ">
+
+  <!---nueva card-->
+  <div *ngFor="let imagen of imagenes"  class="relative inline-block   h-auto sm:w-1/2 md:w-full p-2 ">
+    <div class=" border-l-8  border-orange-500  flex flex-col md:flex-row items-start bg-white border-r-1 border-r-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+
+      <div class="flex flex-col overflow-x-auto  justify-between p-4 leading-normal flex-grow h-full max-h-64"> <!-- Ajusta max-h según sea necesario -->
+        <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+          Nombre Imagen: {{imagen.nombre}}</h5>
+        <div class="overflow-hidden">
+          <p id="texto" class="text-sm line-clamp: 2 mb-3 font-light text-gray-700 dark:text-gray-400" style="font-size: 14px; line-height: 1.5;">
+            Descripcion: {{imagen.alt}}
+          </p>
+        </div>
+
+        <div class="flex items-center">
+          <span class="ml-2 mb-3 font-light text-gray-700 dark:text-gray-400 align-middle">
+            {{imagen.descripcion}}</span>
+        </div>
+
+      <button class="absolute top-2 right-1 mb-2 mr-2 w-24 h-24 rounded-full  bg-white shadow">
+        <img class="w-full h-full rounded-full"
+        [src]="imagen.url" [alt]="imagen.alt"  >
+      </button>
+    </div>
+</div>
+
+</div>
+
+<div class="p-4 bg-gray-100 rounded shadow-md">
+  <h2 class="text-xl font-bold mb-4">Subir una Imagen</h2>
+
+  <input
+    type="file"
+    (change)="onFileSelected($event)"
+    class="block w-full text-sm text-gray-700 border border-gray-300 rounded p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+  />
+
+  <input
+    type="text"
+    #alt
+    placeholder="Alt"
+    class="block w-full text-sm text-gray-700 border border-gray-300 rounded p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+  />
+
+  <button
+    (click)="uploadImage(alt.value)"
+    class="w-full bg-blue-500 text-white font-semibold py-2 rounded hover:bg-blue-600 transition-colors"
+  >
+    Subir Imagen
+  </button>
+</div>
+

@@ -1,0 +1,119 @@
+
+<div id="contenedor" class="p-10">
+    <hr class="border-2 border-black bg-black my-3">
+    <h3 class="my-2 mx-1"><b>ESTABLECIMIENTO</b></h3>      
+    <hr class="border-2 my-3">
+    <h3 class="my-2 mx-1"><b>INSTITUTO SUPERIOR DE PROFESORADO NRO 63 "NATALIA QUESSÚS" - N°63 | CALLE 19 411 | 3586 - LAS TOSCAS</b></h3>
+    <hr class="border-2 border-black my-3">
+
+<h3 class="my-2"><b>MESA</b></h3>
+
+<hr class="border-2 border-black my-3">
+
+<div class="flex">
+    <p class="my-2 mr-12">Acta de Exámenes N°: </p> 
+    <p class="my-2 mx-12">Libro N°: </p>
+    <p class="my-2 ml-12">Folio N°: </p>
+</div>
+
+
+<p class="my-2">Estructura curricular: <b>{{plan}} - {{carreraXid}}</b></p>
+<p class="my-2">Fecha: <b>{{fecha}}</b></p>
+
+
+
+<div class="flex">
+    <p class="my-2 mr-12">Año: <b>{{anio}}</b></p>
+    <p class="my-2 ml-12">Materia: <b>{{materiaSeleccionada}}</b></p>
+</div>
+
+
+<p class="my-2">Sección: <b> 1-A-Vespertino  </b></p>
+
+<hr class="border-2 border-black my-3">
+
+<h3 class="my-2"><b>TRIBUNAL EXAMINADOR</b></h3>
+
+<hr class="border-2 border-black my-3">
+
+
+<p class="my-3">Tribunal: <b>{{tribunal}}</b></p>
+
+
+<hr class="border-2 border-black my-3">   
+
+<div>
+    <table class="table-auto w-full border-collapse border border-gray-400">
+        <thead>
+            <tr>
+                <th class="border border-gray-400 px-2 py-1 text-center" rowspan="2">Orden</th>
+                <th class="border border-gray-400 px-2 py-1 text-center" rowspan="2">N° Libro / N° Folio</th>
+                <th class="border border-gray-400 px-2 py-1 text-center" rowspan="2">Mod Cur</th>
+                <th class="border border-gray-400 px-2 py-1 text-center" rowspan="2">Doc. Identidad</th>
+                <th class="border border-gray-400 px-2 py-1 text-center" rowspan="2">Apellido y Nombre</th>
+                <th class="border border-gray-400 px-2 py-1 text-center" rowspan="2">Parc.</th>
+                <th class="border border-gray-400 px-2 py-1 text-center" colspan="2">Examen Final</th>
+                <th class="border border-gray-400 px-2 py-1 text-center" rowspan="2">Ausente</th>
+                <th class="border border-gray-400 px-2 py-1 text-center" rowspan="2">Calificación Definitiva</th>
+            </tr>
+            <tr>
+                <th class="border border-gray-400 px-2 py-1 text-center">Escrito</th>
+                <th class="border border-gray-400 px-2 py-1 text-center">Oral</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let alumno of inscriptos; let i = index">
+            <tr class="border-t-2 border-gray-600">
+                <td class="border border-gray-400 px-2 py-2 text-center">1</td>
+                <td class="border border-gray-400 px-2 py-2 text-center"></td>
+                <td class="border border-gray-400 px-2 py-2 text-center">RP</td>
+                <td class="border border-gray-400 px-2 py-2 text-center">{{alumno.dni}}</td>
+                <td class="border border-gray-400 px-2 py-2 text-center">{{alumno.nombreApellido}}</td>
+                <td class="border border-gray-400 px-2 py-2 text-center"></td>
+                <td class="border border-gray-400 px-2 py-2 text-center"></td>
+                <td class="border border-gray-400 px-2 py-2 text-center"></td>
+                <td class="border border-gray-400 px-2 py-2 text-center"></td>
+                <td class="border border-gray-400 px-2 py-2 text-center"></td>
+            </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+
+<br class="my-2">
+
+<div class="flex flex-col min-h-full"> 
+   
+    
+        <span class="block my-10"></span>
+
+        <p>Se hace constar que sobre un total de ........................ alumnos, resultaron ........................ aprobados,
+            ........................ desaprobados y ........................ ausentes.
+        </p>
+
+        <span class="block my-8"></span>
+    
+        <div class="flex justify-center">
+            <div class="flex flex-col items-center mx-24">
+                <p>.........................................</p>
+                <p class="my-2">Presidente</p>
+            </div>
+            <div class="flex flex-col items-center mx-24">
+                <p>.........................................</p>
+                <p class="my-2">Vocal 1</p>
+            </div>
+            <div class="flex flex-col items-center mx-24">
+                <p>.........................................</p>
+                <p class="my-2">Vocal 2</p>
+            </div>
+        </div>
+    
+</div>
+
+
+
+
+</div>
+<canvas id="canvasElement" style="display: none; "></canvas>
+
+<button (click)="aPdf('canvasElement', 'contenedor')">Generar PDF</button>

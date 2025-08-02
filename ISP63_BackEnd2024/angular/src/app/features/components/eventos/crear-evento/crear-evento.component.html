@@ -1,0 +1,66 @@
+<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+  <div class="relative py-3 sm:max-w-md sm:mx-auto">
+    <div class="relative px-4 py-8 bg-white mx-4 md:mx-0 shadow border border-gray-200 sm:p-8">
+      <div class="max-w-sm mx-auto">
+        <div class="flex items-center space-x-4">
+          <div class="h-12 w-12 bg-yellow-200 rounded-full flex flex-shrink-0 justify-center items-center text-yellow-500 text-xl font-mono">i</div>
+          <div class="block pl-2 font-semibold text-lg self-start text-gray-700">
+            <h2 class="leading-relaxed">Crear un Evento</h2>
+            <p class="text-sm text-gray-500 font-normal leading-relaxed">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="divide-y divide-gray-200">
+          <div class="py-6 text-base leading-6 space-y-4 text-gray-700 sm:text-base sm:leading-6">
+            <form >
+              <div class="flex flex-col">
+                <label class="leading-loose">Título del Evento</label>
+                <input type="text" class="px-3 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-none focus:outline-none text-gray-600" formControlName="nombre" placeholder="Título del evento" required>
+              </div>
+              <div class="flex flex-col">
+                <label class="leading-loose">Subtítulo del Evento</label>
+                <input type="text" class="px-3 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-none focus:outline-none text-gray-600" formControlName="subtitulo" placeholder="Opcional">
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="flex flex-col">
+                  <label class="leading-loose">Inicio</label>
+                  <div class="relative focus-within:text-gray-600 text-gray-400">
+                    <input type="text" class="pr-3 pl-8 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-none focus:outline-none text-gray-600" formControlName="inicio" placeholder="25/02/2020">
+                    <div class="absolute left-2 top-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <label class="leading-loose">Fecha de Evento</label>
+                  <div class="relative focus-within:text-gray-600 text-gray-400">
+                    <input type="text" class="pr-3 pl-8 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-none focus:outline-none text-gray-600" formControlName="fecha" placeholder="26/02/2020">
+                    <div class="absolute left-2 top-2">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <label class="leading-loose">Descripción del Evento</label>
+                <input type="text" class="px-3 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-none focus:outline-none text-gray-600" formControlName="descripcion" placeholder="Opcional">
+              </div>
+              <!-- Sección imagen -->
+              <div class="flex flex-col">
+                <label class="leading-loose">Imagen del Evento</label>
+                <input type="file" class="w-full text-gray-600 border border-gray-300 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-900" formControlName="imagen">
+              </div>
+              <div class="pt-3 flex items-center space-x-3">
+                <button type="button" class="flex justify-center items-center w-full text-gray-900 px-3 py-2 rounded-md focus:outline-none border border-gray-300">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Cancelar
+                </button>
+                <button type="submit" class="bg-blue-500 flex justify-center items-center w-full text-white px-3 py-2 rounded-md focus:outline-none">
+                  Crear
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

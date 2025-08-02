@@ -1,0 +1,27 @@
+<div class="container">
+    <!--<h2>Listado de Turnos</h2>-->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre del Turno</th>
+                <th>Periodo de Inscripcion Desde</th>
+                <th>Periodo de Inscripcion Hasta</th>
+                <th>Periodo de Examen Hasta</th>
+                <th>Periodo de Examen Hasta</th>
+
+            </tr>
+
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="let turno of turnos">
+                <td>{{ turno.turno }}</td>
+                <td>{{ turno.periodoInscripcionDesde }}</td>
+                <td>{{ turno.periodoInscripcionHasta }}</td>
+                <td>{{ turno.periodoExamenDesde }}</td>
+                <td>{{ turno.periodoExamenHasta }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,57 @@
+<div class="contAside">
+  <button class="mobile-button"
+          (click)="toggleMenu()"
+          [ngClass]="{ 'menu-open': menuVisible }">
+    <i class="fas fa-bars"></i>
+  </button>
+
+
+  <aside class="sidebar justify-content-center" [ngClass]="{ 'menu-visible': menuVisible }">
+    <div class="logo-container">
+      <a     routerLink="/">
+        <img src="assets/imagenes/c5ae74ab1b4fa9285966da79b3f03dfb.png" alt="Logo" class="logo" />
+        </a>
+    </div>
+
+    <nav class="menu" >
+      <ul>
+        <li>
+          <span class="text-center text-white">{{ getNombreCarrera() }}</span>
+        </li>
+        <li>
+          <a
+            [routerLink]="['/',getRutaCarrera()]"
+            [ngClass]="{ active: activeLink === 'getRutaCarrera()' }"
+            (click)="setActiveLink('getRutaCarrera()')"
+            class="text-xs"
+            ><i class="fas fa-home"></i><span>Inicio</span></a
+          >
+        </li>
+
+        <li>
+
+          <a [routerLink]="['/perfil']" [state]="{ carrera:  getRutaCarrera() }"
+            [ngClass]="{ active: activeLink === '/perfil' }"
+            (click)="setActiveLink('/perfil')"
+            ><i class="fas fa-user-graduate"></i><span>Perfil Egresado</span></a
+          >
+        </li>
+        <li>
+          <a [routerLink]="['/planestudio']" [state]="{ carrera:  getRutaCarrera() }"
+            [ngClass]="{ active: activeLink === '/planestudio' }"
+            (click)="setActiveLink('/planestudio')"
+            ><i class="fas fa-bullhorn"></i><span>Plan Estudio</span></a
+          >
+        </li>
+        <li>
+          <a [routerLink]="['/correlatividades']" [state]="{ carrera:  getRutaCarrera() }"
+            [ngClass]="{ active: activeLink === '/correlatividades' }"
+            (click)="setActiveLink('/correlatividades')"
+            ><i class="fas fa-calendar-alt"></i><span>Correlatividades</span></a
+          >
+        </li>
+
+       </ul>
+    </nav>
+  </aside>
+</div>
