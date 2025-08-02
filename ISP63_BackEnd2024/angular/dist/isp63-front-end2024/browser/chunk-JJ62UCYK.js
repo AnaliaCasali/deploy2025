@@ -1,1 +1,0 @@
-import{a}from"./chunk-TGIVGOJA.js";import"./chunk-CB6FNCUI.js";import"./chunk-SJWRDQVH.js";import"./chunk-5AS2EY2S.js";import"./chunk-5KY6YBJG.js";import"./chunk-4DCJT2OD.js";import"./chunk-X5N6KVFF.js";import"./chunk-EQDQRRRY.js";export{a as NotificacionesListadoComponent};

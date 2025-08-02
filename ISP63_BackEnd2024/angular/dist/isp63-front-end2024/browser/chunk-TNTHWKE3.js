@@ -1,0 +1,1 @@
+import{a}from"./chunk-5DYCXTZD.js";import"./chunk-IBCUWFOV.js";import"./chunk-OFA4HTK6.js";import"./chunk-4ATTAGCL.js";import"./chunk-WZ63J2F5.js";import"./chunk-SJWRDQVH.js";import"./chunk-EITPQ4QS.js";import"./chunk-5KY6YBJG.js";import"./chunk-4DCJT2OD.js";import"./chunk-X5N6KVFF.js";import"./chunk-EQDQRRRY.js";export{a as NoticiasCardComponent};
